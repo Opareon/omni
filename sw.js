@@ -1,6 +1,6 @@
 // Omni service worker: keeps the app usable offline.
 // Pages load fresh from the network when online and fall back to the saved copy offline.
-const CACHE = 'omni-c96ab6cdfa';
+const CACHE = 'omni-28398d9c5a';
 const SHELL = ['./', 'index.html', 'map.html', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png'];
 
 self.addEventListener('install', e => {

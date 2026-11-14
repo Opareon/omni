@@ -52,6 +52,7 @@ ul.check label{display:flex;gap:12px;align-items:flex-start;padding:11px 0;curso
 ul.check input{appearance:none;-webkit-appearance:none;flex:none;width:24px;height:24px;margin:0;border:1.5px solid var(--muted);border-radius:7px;display:grid;place-content:center;background:var(--card)}
 ul.check input:checked{background:var(--accent);border-color:var(--accent)}
 ul.check input:checked::after{content:"";width:11px;height:6px;border-left:2.5px solid #fff;border-bottom:2.5px solid #fff;transform:translateY(-2px) rotate(-45deg)}
+ul.check input:disabled{opacity:.55}
 ul.check input:checked+span{color:var(--muted);text-decoration:line-through;text-decoration-thickness:1px}
 ul.check span{font-size:15px;line-height:1.4}
 .tools{display:flex;justify-content:flex-end;margin:-4px 0 10px}
@@ -65,7 +66,7 @@ body.off #offline{display:block}
 <div class="wrap">
 <p class="kicker">Omni, project tracker</p>
 <h1>Omni Project Progress Tracker</h1>
-<p class="updated">Tracker saved Nov 14, 2026, 12:10pm</p>
+<p class="updated">Tracker saved Nov 14, 2026, 12:22pm</p>
 <p id="offline">Offline: showing the last copy saved on this phone</p>
 <p class="lede">A running record of Kobe's local AI video-editing and approval-first posting pipeline, including decisions, development progress and unresolved questions.</p>
 <p class="notice"><b>Ticks save on this phone only.</b> They don't change the tracker note or sync anywhere. When a step is really done, tell Sesame so it's logged in the tracker and shows up here after the next update.</p>
@@ -102,6 +103,9 @@ body.off #offline{display:block}
 <h3>November 10, 2026: Established the project record</h3>
 <p>Kobe requested a dedicated Omni project progress tracker while the publishing research continued.</p>
 <p><strong>Progress:</strong> This running log now separates project intentions, decisions, research and verified implementation so planning does not get mistaken for a finished system.</p>
+<h3>November 14, 2026: Put the tracker on Kobe's phone</h3>
+<p>Kobe asked for the tracker as an iPhone app without the App Store. It is now a web app at <a target="_blank" rel="noopener" href="https://opareon.github.io/omni/">opareon.github.io/omni</a>, published from the public GitHub repository Opareon/omni with this tracker and the 3D map, which Kobe chose to publish.</p>
+<p><strong>Progress:</strong> The live site, phone layout, offline loading and tick boxes were tested in a phone-sized browser. Ticks save on the phone only; the site changes only when this note is updated and the app is republished.</p>
 
 </section>
 <section id="to-do">
@@ -119,7 +123,7 @@ body.off #offline{display:block}
 </ul>
 <h3>Mobile access</h3>
 <ul class="check">
-<li><label><input type="checkbox" data-id="e9e06362cd7f"><span>Set up GitHub Pages hosting for mobile web app.</span></label></li>
+<li><label><input type="checkbox" data-id="e9e06362cd7f" checked disabled title="Done in the tracker"><span>Set up GitHub Pages hosting for mobile web app.</span></label></li>
 </ul>
 <h3>Editing and publishing workflow</h3>
 <ul class="check">
@@ -171,9 +175,9 @@ const K='omni-ticks-v1';
 let s={};try{s=JSON.parse(localStorage.getItem(K))||{}}catch(e){}
 const boxes=[...document.querySelectorAll('ul.check input')];
 const bar=document.getElementById('meterbar'),txt=document.getElementById('metertext');
-const upd=()=>{const n=boxes.filter(b=>b.checked).length;bar.style.width=(boxes.length?n/boxes.length*100:0)+'%';txt.textContent=n+' of '+boxes.length+' ticked on this phone'};
-boxes.forEach(b=>{const id=b.dataset.id;b.checked=!!s[id];b.addEventListener('change',()=>{if(b.checked)s[id]=1;else delete s[id];try{localStorage.setItem(K,JSON.stringify(s))}catch(e){}upd()})});
-document.querySelectorAll('.reset').forEach(r=>r.addEventListener('click',()=>{const u=r.closest('section');u.querySelectorAll('ul.check input').forEach(b=>{b.checked=false;delete s[b.dataset.id]});try{localStorage.setItem(K,JSON.stringify(s))}catch(e){}upd()}));
+const upd=()=>{const n=boxes.filter(b=>b.checked).length;bar.style.width=(boxes.length?n/boxes.length*100:0)+'%';txt.textContent=n+' of '+boxes.length+' done'};
+boxes.forEach(b=>{if(b.disabled)return;const id=b.dataset.id;b.checked=!!s[id];b.addEventListener('change',()=>{if(b.checked)s[id]=1;else delete s[id];try{localStorage.setItem(K,JSON.stringify(s))}catch(e){}upd()})});
+document.querySelectorAll('.reset').forEach(r=>r.addEventListener('click',()=>{const u=r.closest('section');u.querySelectorAll('ul.check input:not(:disabled)').forEach(b=>{b.checked=false;delete s[b.dataset.id]});try{localStorage.setItem(K,JSON.stringify(s))}catch(e){}upd()}));
 upd();
 const net=()=>document.body.classList.toggle('off',!navigator.onLine);addEventListener('online',net);addEventListener('offline',net);net();
 if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}
