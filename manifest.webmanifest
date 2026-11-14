@@ -1,7 +1,8 @@
 {
   "name": "Omni",
   "short_name": "Omni",
-  "description": "Omni project tracker and 3D map",
+  "id": "./",
+  "description": "Omni 3D map and project tracker",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
