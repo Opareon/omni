@@ -6,8 +6,8 @@
 <title>Omni</title>
 <meta name="description" content="Omni project tracker">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#f6f5f2" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0d0d0f" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Omni">
@@ -16,9 +16,9 @@
 <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <style>
-:root{--ground:#f6f5f2;--card:#ffffff;--ink:#1a1a1c;--muted:#6d6b67;--rule:#e3e1dc;--chip:#efede8;--accent:#1f6feb;
+:root{color-scheme:light dark;--ground:#ffffff;--card:#ffffff;--ink:#000000;--muted:#5c5c5c;--rule:#d4d4d4;--chip:#f2f2f2;--accent:#000000;--on-accent:#ffffff;
 --serif:"New York",ui-serif,Georgia,"Times New Roman",serif;--sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif;--mono:ui-monospace,"SF Mono",Menlo,monospace}
-@media (prefers-color-scheme:dark){:root{--ground:#0d0d0f;--card:#17171a;--ink:#ecebe7;--muted:#9a978f;--rule:#2a2a2e;--chip:#222226;--accent:#4c8dff}}
+@media (prefers-color-scheme:dark){:root{--ground:#000000;--card:#000000;--ink:#ffffff;--muted:#a3a3a3;--rule:#3a3a3a;--chip:#141414;--accent:#ffffff;--on-accent:#000000}}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
@@ -37,7 +37,7 @@ nav.jump{position:sticky;top:0;z-index:5;display:flex;gap:6px;overflow-x:auto;-w
 nav.jump::-webkit-scrollbar{display:none}
 nav.jump a{flex:none;font:600 13px/1 var(--sans);text-decoration:none;color:var(--ink);background:var(--chip);border:1px solid var(--rule);border-radius:999px;padding:9px 12px}
 nav.jump a.map{background:var(--ink);color:var(--ground);border-color:var(--ink)}
-section{background:var(--card);border:1px solid var(--rule);border-radius:16px;padding:16px 16px 8px;margin:14px 0}
+section{background:var(--card);border:1px solid var(--ink);border-radius:16px;padding:16px 16px 8px;margin:14px 0}
 section ul,section ol{margin:0 0 12px;padding-left:20px}
 section li{margin:0 0 6px}
 section strong{font-weight:600}
@@ -51,7 +51,7 @@ ul.check li:first-child{border-top:0}
 ul.check label{display:flex;gap:12px;align-items:flex-start;padding:11px 0;cursor:pointer;-webkit-tap-highlight-color:transparent}
 ul.check input{appearance:none;-webkit-appearance:none;flex:none;width:24px;height:24px;margin:0;border:1.5px solid var(--muted);border-radius:7px;display:grid;place-content:center;background:var(--card)}
 ul.check input:checked{background:var(--accent);border-color:var(--accent)}
-ul.check input:checked::after{content:"";width:11px;height:6px;border-left:2.5px solid #fff;border-bottom:2.5px solid #fff;transform:translateY(-2px) rotate(-45deg)}
+ul.check input:checked::after{content:"";width:11px;height:6px;border-left:2.5px solid var(--on-accent);border-bottom:2.5px solid var(--on-accent);transform:translateY(-2px) rotate(-45deg)}
 ul.check input:disabled{opacity:.55}
 ul.check input:checked+span{color:var(--muted);text-decoration:line-through;text-decoration-thickness:1px}
 ul.check span{font-size:15px;line-height:1.4}
@@ -66,48 +66,12 @@ body.off #offline{display:block}
 <div class="wrap">
 <p class="kicker">Omni, project tracker</p>
 <h1>Omni Project Progress Tracker</h1>
-<p class="updated">Tracker saved Nov 14, 2026, 12:22pm</p>
+<p class="updated">Tracker saved Nov 14, 2026, 12:26pm</p>
 <p id="offline">Offline: showing the last copy saved on this phone</p>
 <p class="lede">A running record of Kobe's local AI video-editing and approval-first posting pipeline, including decisions, development progress and unresolved questions.</p>
 <p class="notice"><b>Ticks save on this phone only.</b> They don't change the tracker note or sync anywhere. When a step is really done, tell Sesame so it's logged in the tracker and shows up here after the next update.</p>
 <div class="meter" aria-live="polite"><div class="bar"><i id="meterbar"></i></div><span id="metertext"></span></div>
-<nav class="jump"><a href="#project-direction">Direction</a><a href="#current-baseline">Baseline</a><a href="#progress-log">Log</a><a href="#to-do">To Do</a><a href="#research">Research</a><a href="#open-items">Open items</a><a href="#continuing-the-tracker">Updating</a><a class="map" href="./">3D map</a></nav>
-<section id="project-direction">
-<h2>Project direction</h2>
-<p>Omni is Kobe's name for the overall application and digital virtual assistant, starting with editing and distribution needs. Ollama is its planned local model-serving component, described in Kobe's own metaphor as Omni's "composure system." Claude Code is the tool for building the application.</p>
-<p>Build a workflow that accepts video files, studies reference videos, creates a brand sheet and presents a storyboard for review before editing. After Kobe approves the finished edit, connect it to publishing across his chosen platforms.</p>
-<p>The priority is genuinely free tools, not free trials. Kobe is open to building the publishing connection rather than paying for a cross-posting service. Instagram is a known destination; the other destinations have not been settled.</p>
-
-</section>
-<section id="current-baseline">
-<h2>Current baseline</h2>
-<ul>
-<li><strong>Computer:</strong> Kobe reports an M1 MacBook with 32 GB of memory. This tracker does not verify installed software or local files.</li>
-<li><strong>Ollama:</strong> The planned local model-serving component for reasoning and assistance. It is not, by itself, a video editor or a publishing service. Installation and a successful model run have not been verified here.</li>
-<li><strong>Claude Code:</strong> The intended tool for building the editing workflow and publishing integrations. No completed integration or successful end-to-end test is recorded yet.</li>
-<li><strong>Editing tools discussed:</strong> FreeMotion, Hyperframes, FFmpeg, Whisper and yt-dlp. These are candidates from the project discussion, not a verified working stack.</li>
-<li><strong>Cross-posting research:</strong> In progress when this tracker was created. The research is comparing genuinely free services with a self-built route using official platform APIs, including access restrictions, account requirements and costs.</li>
-<li><strong>Publishing approval:</strong> Kobe must give the go-ahead before videos are posted. Requesting this tracker does not authorize posting, account connections or installation.</li>
-<li><strong>Local versus online:</strong> Local model inference is the aim for the reasoning component. Web research and social publishing still require internet access and send relevant information to external services.</li>
-</ul>
-
-</section>
-<section id="progress-log">
-<h2>Progress log</h2>
-<h3>November 10, 2026: Defined the local editing foundation</h3>
-<p>Kobe described a standalone video workflow for his computer: input footage, analyze references, create a brand sheet, prepare a storyboard for approval and then edit. The discussion clarified the separate roles of local inference and the tools that actually process video.</p>
-<p><strong>Progress:</strong> The intended workflow and component roles are clearer. A working installation or completed export has not been demonstrated in this conversation.</p>
-<h3>November 10, 2026: Added approval-first distribution</h3>
-<p>Kobe asked for the pipeline to post edited videos across platforms after his go-ahead. He specified that the solution should be free and welcomed a build-it-ourselves option.</p>
-<p><strong>Progress:</strong> Free cross-posting and official API research is under way. No service has been selected, and no account connection or publishing test is recorded.</p>
-<h3>November 10, 2026: Established the project record</h3>
-<p>Kobe requested a dedicated Omni project progress tracker while the publishing research continued.</p>
-<p><strong>Progress:</strong> This running log now separates project intentions, decisions, research and verified implementation so planning does not get mistaken for a finished system.</p>
-<h3>November 14, 2026: Put the tracker on Kobe's phone</h3>
-<p>Kobe asked for the tracker as an iPhone app without the App Store. It is now a web app at <a target="_blank" rel="noopener" href="https://opareon.github.io/omni/">opareon.github.io/omni</a>, published from the public GitHub repository Opareon/omni with this tracker and the 3D map, which Kobe chose to publish.</p>
-<p><strong>Progress:</strong> The live site, phone layout, offline loading and tick boxes were tested in a phone-sized browser. Ticks save on the phone only; the site changes only when this note is updated and the app is republished.</p>
-
-</section>
+<nav class="jump" aria-label="Tracker sections"><a class="map" href="./">3D Map</a><a href="#to-do">To Do</a><a href="#progress-log">Log</a><a href="#project-direction">Direction</a><a href="#research">Research</a><a href="#current-baseline">Baseline</a><a href="#open-items">Open Items</a></nav>
 <section id="to-do">
 <h2>To Do</h2>
 <p>These are build steps, not completed work. Start with one working local test before expanding the pipeline.</p>
@@ -135,6 +99,31 @@ body.off #offline{display:block}
 <p><strong>Notifications:</strong> Kobe requested notifications for the setup work. Reminder timing has not been specified, and no notification has been scheduled.</p>
 <div class="tools"><button type="button" class="tbtn reset">Clear ticks</button></div>
 </section>
+<section id="progress-log">
+<h2>Progress log</h2>
+<h3>November 10, 2026: Defined the local editing foundation</h3>
+<p>Kobe described a standalone video workflow for his computer: input footage, analyze references, create a brand sheet, prepare a storyboard for approval and then edit. The discussion clarified the separate roles of local inference and the tools that actually process video.</p>
+<p><strong>Progress:</strong> The intended workflow and component roles are clearer. A working installation or completed export has not been demonstrated in this conversation.</p>
+<h3>November 10, 2026: Added approval-first distribution</h3>
+<p>Kobe asked for the pipeline to post edited videos across platforms after his go-ahead. He specified that the solution should be free and welcomed a build-it-ourselves option.</p>
+<p><strong>Progress:</strong> Free cross-posting and official API research is under way. No service has been selected, and no account connection or publishing test is recorded.</p>
+<h3>November 10, 2026: Established the project record</h3>
+<p>Kobe requested a dedicated Omni project progress tracker while the publishing research continued.</p>
+<p><strong>Progress:</strong> This running log now separates project intentions, decisions, research and verified implementation so planning does not get mistaken for a finished system.</p>
+<h3>November 14, 2026: Major achievement, launched Omni as a mobile web app</h3>
+<p>Kobe asked for the tracker as an iPhone app without the App Store. It is now a web app at <a target="_blank" rel="noopener" href="https://opareon.github.io/omni/">opareon.github.io/omni</a>, published from the public GitHub repository Opareon/omni with this tracker and the 3D map, which Kobe chose to publish.</p>
+<p><strong>Progress:</strong> The live site, phone layout, offline loading and tick boxes were tested in a phone-sized browser. Ticks save on the phone only; the site changes only when this note is updated and the app is republished.</p>
+<p><strong>Achievement:</strong> Omni moved from a tracker and 3D map into a live, usable mobile web app. Kobe opened it on his iPhone and called this a big achievement, asking that the milestone be celebrated in the progress log.</p>
+<p><strong>Follow-up requested:</strong> Open the 3D map first when launching the app. This change is being handled separately and is not marked complete in this entry.</p>
+
+</section>
+<section id="project-direction">
+<h2>Project direction</h2>
+<p>Omni is Kobe's name for the overall application and digital virtual assistant, starting with editing and distribution needs. Ollama is its planned local model-serving component, described in Kobe's own metaphor as Omni's "composure system." Claude Code is the tool for building the application.</p>
+<p>Build a workflow that accepts video files, studies reference videos, creates a brand sheet and presents a storyboard for review before editing. After Kobe approves the finished edit, connect it to publishing across his chosen platforms.</p>
+<p>The priority is genuinely free tools, not free trials. Kobe is open to building the publishing connection rather than paying for a cross-posting service. Instagram is a known destination; the other destinations have not been settled.</p>
+
+</section>
 <section id="research">
 <h2>Research</h2>
 <h3>Repurpose.io: cross-platform distribution</h3>
@@ -148,6 +137,19 @@ body.off #offline{display:block}
 <li>Identify account requirements and any features that still need manual steps.</li>
 </ul>
 <p>This entry is a research queue item, not a completed evaluation or a subscription decision.</p>
+
+</section>
+<section id="current-baseline">
+<h2>Current baseline</h2>
+<ul>
+<li><strong>Computer:</strong> Kobe reports an M1 MacBook with 32 GB of memory. This tracker does not verify installed software or local files.</li>
+<li><strong>Ollama:</strong> The planned local model-serving component for reasoning and assistance. It is not, by itself, a video editor or a publishing service. Installation and a successful model run have not been verified here.</li>
+<li><strong>Claude Code:</strong> The intended tool for building the editing workflow and publishing integrations. No completed integration or successful end-to-end test is recorded yet.</li>
+<li><strong>Editing tools discussed:</strong> FreeMotion, Hyperframes, FFmpeg, Whisper and yt-dlp. These are candidates from the project discussion, not a verified working stack.</li>
+<li><strong>Cross-posting research:</strong> In progress when this tracker was created. The research is comparing genuinely free services with a self-built route using official platform APIs, including access restrictions, account requirements and costs.</li>
+<li><strong>Publishing approval:</strong> Kobe must give the go-ahead before videos are posted. Requesting this tracker does not authorize posting, account connections or installation.</li>
+<li><strong>Local versus online:</strong> Local model inference is the aim for the reasoning component. Web research and social publishing still require internet access and send relevant information to external services.</li>
+</ul>
 
 </section>
 <section id="open-items">

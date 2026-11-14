@@ -1,6 +1,6 @@
 // Omni service worker: keeps the app usable offline.
 // Pages load fresh from the network when online and fall back to the saved copy offline.
-const CACHE = 'omni-905abafe75';
+const CACHE = 'omni-8b5664aab4';
 // The landing page ('./' and index.html) is the 3D map; the tracker is tracker.html.
 const SHELL = ['./', 'index.html', 'tracker.html', 'map.html', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png'];
 
