@@ -6,19 +6,19 @@
 <title>Omni</title>
 <meta name="description" content="Omni project tracker">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="dark">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Omni">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <style>
-:root{color-scheme:light dark;--ground:#ffffff;--card:#ffffff;--ink:#000000;--muted:#5c5c5c;--rule:#d4d4d4;--chip:#f2f2f2;--accent:#000000;--on-accent:#ffffff;
+:root{color-scheme:dark;--ground:#000000;--card:#000000;--ink:#ffffff;--muted:#a3a3a3;--rule:#3a3a3a;--chip:#141414;--accent:#ffffff;--on-accent:#000000;
 --serif:"New York",ui-serif,Georgia,"Times New Roman",serif;--sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif;--mono:ui-monospace,"SF Mono",Menlo,monospace}
-@media (prefers-color-scheme:dark){:root{--ground:#000000;--card:#000000;--ink:#ffffff;--muted:#a3a3a3;--rule:#3a3a3a;--chip:#141414;--accent:#ffffff;--on-accent:#000000}}
+html{background:#000000}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
@@ -36,7 +36,7 @@ a{color:inherit;text-decoration-thickness:1px;text-underline-offset:2px}
 nav.jump{position:sticky;top:0;z-index:5;display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:calc(env(safe-area-inset-top) + 8px) 0 10px;margin:0 -18px 6px;padding-left:18px;padding-right:18px;background:var(--ground);border-bottom:1px solid var(--rule)}
 nav.jump::-webkit-scrollbar{display:none}
 nav.jump a{flex:none;font:600 13px/1 var(--sans);text-decoration:none;color:var(--ink);background:var(--chip);border:1px solid var(--rule);border-radius:999px;padding:9px 12px}
-nav.jump a.map{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+nav.jump a.map{background:var(--ground);color:var(--ink);border-color:var(--ink)}
 section{background:var(--card);border:1px solid var(--ink);border-radius:16px;padding:16px 16px 8px;margin:14px 0}
 section ul,section ol{margin:0 0 12px;padding-left:20px}
 section li{margin:0 0 6px}
@@ -182,8 +182,8 @@ boxes.forEach(b=>{if(b.disabled)return;const id=b.dataset.id;b.checked=!!s[id];b
 document.querySelectorAll('.reset').forEach(r=>r.addEventListener('click',()=>{const u=r.closest('section');u.querySelectorAll('ul.check input:not(:disabled)').forEach(b=>{b.checked=false;delete s[b.dataset.id]});try{localStorage.setItem(K,JSON.stringify(s))}catch(e){}upd()}));
 upd();
 const net=()=>document.body.classList.toggle('off',!navigator.onLine);addEventListener('online',net);addEventListener('offline',net);net();
-if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}
 })();
 </script>
+<script>window.OMNI_BUILD='35d493ab74';(()=>{const V=window.OMNI_BUILD;let reg=null,busy=false;const check=async()=>{if(busy||!navigator.onLine)return;busy=true;try{if(reg&&reg.waiting)reg.waiting.postMessage('skipWaiting');const r=await fetch('version.json',{cache:'no-store'});if(!r.ok)return;const j=await r.json();if(j.version&&j.version!==V){const k='omni-reloaded-'+j.version;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,'1');await fetch(location.href.split('#')[0],{cache:'reload'}).then(x=>x.text()).catch(()=>{});location.reload();return}}catch(e){}finally{busy=false}};if('serviceWorker' in navigator){addEventListener('load',()=>{navigator.serviceWorker.register('sw.js',{updateViaCache:'none'}).then(r=>{reg=r;check()}).catch(()=>check())})}else{addEventListener('load',check)}document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')check()});addEventListener('pageshow',e=>{if(e.persisted)check()});addEventListener('online',check);})();</script>
 </body>
 </html>
