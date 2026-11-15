@@ -169,7 +169,7 @@ body.off #offline{display:block}
 <div class="wrap">
 <p class="kicker">Omni, project tracker</p>
 <h1>Omni Project Progress Tracker</h1>
-<p class="updated">Tracker saved Nov 15, 2026, 12:57pm</p>
+<p class="updated">Tracker saved Nov 15, 2026, 2:39pm</p>
 <p id="offline">Offline: showing the last copy saved on this phone</p>
 <p class="lede">A running record of Kobe's local AI video-editing and approval-first posting pipeline, including decisions, development progress and unresolved questions.</p>
 <p class="notice"><b>Ticks save on this phone only.</b> A ticked To Do item moves to Completed, and Back to To Do there returns it. The times in Completed and anything you add there also save on this phone only. They don't change the tracker note or sync anywhere. When a step is really done, tell Sesame so it's logged in the tracker and shows up here after the next update.</p>
@@ -379,6 +379,8 @@ body.off #offline{display:block}
 <li><strong>November 15, 2026:</strong> Confirmed Node 26.13.1 on your Mac meets HyperFrames' requirement. A new render hasn't been proven.</li>
 <li><strong>November 15, 2026:</strong> Set the standing rule: every clip is broken into parts and shown as a storyboard before anything renders. Each stage will be a ready-made script in GitHub, so Pi runs one command.</li>
 <li><strong>November 15, 2026:</strong> Put <a target="_blank" rel="noopener" href="https://github.com/KalebJS/whispermlx">whispermlx</a> first on the to-do list. It is a version of WhisperX that runs on the M1's graphics chip and gives a timestamp for every word. Not installed yet.</li>
+<li><strong>November 15, 2026:</strong> Made the omni-editor code repo private. Your Mac pulled the app with a read-only access key saved in its Keychain.</li>
+<li><strong>November 15, 2026:</strong> Added Graphify to the end of the to-do list as a later step: a map of the code so Pi can find things without reading long files.</li>
 </ul>
 <h4>How the estimate works</h4>
 <p>Each milestone has a weight; together they make 100%. A milestone that is done earns its full weight. Work that is built and tested but has not yet run on your Mac earns half. Once it is built and its run on your Mac is verified, it earns its full weight. Proposed work, research still under way and planning earn nothing.</p>
@@ -394,10 +396,12 @@ body.off #offline{display:block}
 <li><strong>Automatic rendering of the edited video</strong> (10%): not started. Earned 0%.</li>
 <li><strong>First proof of concept from your footage and one approved painting</strong> (10%): not started. Earned 0%.</li>
 <li><strong>Your review and approval of the look</strong> (4%): not started. Earned 0%.</li>
-<li><strong>Reusable effects and templates</strong> (6%): not started. Earned 0%.</li>
+<li><strong>Reusable effects and templates</strong> (5%): not started. Earned 0%.</li>
 <li><strong>Built into the app</strong> (4%): not started. Earned 0%.</li>
+<li><strong>Later: code map with Graphify</strong> (1%): not started. Earned 0%.</li>
 </ul>
 <p>The storyboard selector was added to the plan after the first estimate. Its weight came from milestones not yet started, so the 14% earned did not change.</p>
+<p>The Graphify step was added later as a small, optional tooling step. Its 1% came from reusable effects and templates, which has not started, so the 20% earned did not change.</p>
 <p>On November 15 the estimate went from 14% to 20%: the foundation's verified run on your Mac added 5%, and the finished TikTok review added 1%.</p>
 <p>Total earned: 20%. Verifying the interface on your Mac would add 2%, and one proven HyperFrames render would add 1%.</p>
 <h4>To Do</h4>
@@ -418,6 +422,7 @@ body.off #offline{display:block}
 <li><label><b class="num">13.</b><input type="checkbox" data-id="4516cbf7216a"><span>Turn the approved look into reusable presets, such as "painting reveal" and "idea orbit".</span></label></li>
 <li><label><b class="num">14.</b><input type="checkbox" data-id="a39e0ac63fc9"><span>Build the storyboard selector into the app: progress shown for each section, and section-by-section review and approval before the final video is rendered.</span></label></li>
 <li><label><b class="num">15.</b><input type="checkbox" data-id="d806876ba852"><span>Add the presets to the app.</span></label></li>
+<li><label><b class="num">16.</b><input type="checkbox" data-id="dca399010bb3"><span>Later: try <a target="_blank" rel="noopener" href="https://github.com/Graphify-Labs/graphify">Graphify</a> on the Opareon Studios account. Install it with uv (already there from the whispermlx install; it needs Python 3.10+). Map the omni-editor repo so Pi can ask where things live instead of reading 2,000-line files, and check what a change would affect before editing. Code mapping is local and free. Bigger fit later: mapping Omni notes, research, transcripts and painting files into one connected graph for the 3D map. Mapping notes, images and video needs an AI model (slow local Gemma or a paid API), so decide that first. Not urgent while the repo is small (about 9 files).</span></label></li>
 </ul>
 <div class="tools"><button type="button" class="tbtn reset">Clear ticks</button></div>
 </div>
@@ -466,6 +471,9 @@ body.off #offline{display:block}
 <h3>November 15, 2026: The Video Pipeline ran on the Mac; whispermlx is the next step</h3>
 <p>Kobe asked for whispermlx to go first on the Omni Editor to-do list to speed up the process.</p>
 <p><strong>Progress:</strong> The Video Pipeline ran on Kobe's Mac: IMG_2780 came out as "IMG_2780 - edited.mp4" (1080x1920 H.264 with AAC audio; a full decode passed) and an .srt captions file. Its length and caption text were not checked. The Mac's Homebrew FFmpeg 9.0.2 has no libass, so it can't burn captions into the picture; captions will be drawn with HyperFrames instead. Node 26.13.1 meets HyperFrames' requirement, but a new render hasn't been proven. The TikTok reference review finished: custom animation for every line, storyboard first. The new first step is installing whispermlx and transcribing IMG_2780 with a timestamp on every word. Kobe's standing rule was added: every clip is broken into parts and shown as a storyboard before anything renders. Each stage will become a ready-made script in GitHub so Pi runs one command. The estimate went from 14% to 20%.</p>
+<h3>November 15, 2026: Graphify added as a later step; omni-editor repo made private</h3>
+<p>Kobe said yes to adding Graphify to the Omni Editor to-do list as a later step.</p>
+<p><strong>Progress:</strong> Graphify is step 16, the last item on the Omni Editor to-do list, after the core editor steps, and it is unticked. It would map the omni-editor code so Pi can ask where things live and check what a change would affect; mapping notes, images and video would need an AI model, so that choice comes first. It was given a 1% weight taken from a milestone that has not started, so the estimate stays at 20%. The omni-editor repo was made private, and the Mac pulled the app with a read-only access key saved in its Keychain.</p>
 
 </section>
 <section id="project-direction">
@@ -759,6 +767,6 @@ const sync=()=>{let h='';try{h=decodeURIComponent(location.hash.slice(1))}catch(
 addEventListener('hashchange',sync);sync();
 })();
 </script>
-<script>window.OMNI_BUILD='80755407d3';(()=>{const V=window.OMNI_BUILD;let reg=null,busy=false;const check=async()=>{if(busy||!navigator.onLine)return;busy=true;try{if(reg&&reg.waiting)reg.waiting.postMessage('skipWaiting');const r=await fetch('version.json',{cache:'no-store'});if(!r.ok)return;const j=await r.json();if(j.version&&j.version!==V){const k='omni-reloaded-'+j.version;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,'1');await fetch(location.href.split('#')[0],{cache:'reload'}).then(x=>x.text()).catch(()=>{});location.reload();return}}catch(e){}finally{busy=false}};if('serviceWorker' in navigator){addEventListener('load',()=>{navigator.serviceWorker.register('sw.js',{updateViaCache:'none'}).then(r=>{reg=r;check()}).catch(()=>check())})}else{addEventListener('load',check)}document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')check()});addEventListener('pageshow',e=>{if(e.persisted)check()});addEventListener('online',check);})();</script>
+<script>window.OMNI_BUILD='5020022ef0';(()=>{const V=window.OMNI_BUILD;let reg=null,busy=false;const check=async()=>{if(busy||!navigator.onLine)return;busy=true;try{if(reg&&reg.waiting)reg.waiting.postMessage('skipWaiting');const r=await fetch('version.json',{cache:'no-store'});if(!r.ok)return;const j=await r.json();if(j.version&&j.version!==V){const k='omni-reloaded-'+j.version;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,'1');await fetch(location.href.split('#')[0],{cache:'reload'}).then(x=>x.text()).catch(()=>{});location.reload();return}}catch(e){}finally{busy=false}};if('serviceWorker' in navigator){addEventListener('load',()=>{navigator.serviceWorker.register('sw.js',{updateViaCache:'none'}).then(r=>{reg=r;check()}).catch(()=>check())})}else{addEventListener('load',check)}document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')check()});addEventListener('pageshow',e=>{if(e.persisted)check()});addEventListener('online',check);})();</script>
 </body>
 </html>
