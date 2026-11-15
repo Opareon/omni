@@ -1,10 +1,10 @@
 // Omni service worker: keeps the app usable offline and always shows the newest version online.
-// Build 77551f2352.
+// Build 0433132865.
 // Why the fetch options matter: GitHub Pages sends Cache-Control: max-age=600, so a plain fetch()
 // can be answered from the browser's HTTP cache with a copy up to 10 minutes old even when online.
 // Every page and file here is revalidated with the server (cache: 'no-cache', cheap 304s via ETag),
 // and version.json is never cached at all.
-const CACHE = 'omni-77551f2352';
+const CACHE = 'omni-0433132865';
 // The landing page ('./' and index.html) is the 3D map; the tracker is tracker.html.
 const SHELL = ['./', 'index.html', 'tracker.html', 'map.html', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png'];
 
