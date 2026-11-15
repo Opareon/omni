@@ -69,6 +69,30 @@ ul.check .num{flex:none;min-width:1.4em;font:600 15px/24px var(--sans);color:var
 .cal-what b{font-weight:600}
 .cal-what small{display:block;font-size:13px;color:var(--muted);margin-top:2px}
 .cal-item::after{content:"\203A";flex:none;color:var(--muted);font-size:20px;line-height:1}
+.calgrid{margin:4px 0 12px;touch-action:pan-y}
+.cg-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 10px}
+.cg-title{font:600 20px/1.2 var(--serif);margin:0}
+.cg-nav{display:flex;align-items:center;gap:6px}
+.cg-btn{appearance:none;border:1px solid var(--rule);background:var(--chip);color:var(--ink);font:600 13px/1 var(--sans);height:34px;min-width:34px;padding:0 12px;border-radius:999px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.cg-btn.arrow{padding:0;font-size:20px;line-height:1}
+.cg-dow{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border-bottom:1px solid var(--rule)}
+.cg-dow span{font:500 10px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:right;padding:0 6px 7px}
+.cg-cells{display:grid;grid-template-columns:repeat(7,minmax(0,1fr))}
+.cg-cell{position:relative;display:flex;flex-direction:column;align-items:stretch;gap:3px;min-height:74px;padding:5px 4px 5px;border-bottom:1px solid var(--rule);border-right:1px solid var(--rule);text-decoration:none;color:var(--ink);min-width:0;-webkit-tap-highlight-color:transparent}
+.cg-cell:nth-child(7n){border-right:0}
+.cg-cell.out{color:#5c5c5c}
+.cg-num{align-self:flex-end;display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;padding:0 4px;border-radius:999px;font:500 13px/1 var(--sans)}
+.cg-cell.today .cg-num{background:var(--ink);color:var(--on-accent);font-weight:700}
+.cg-ev{font:600 10px/1.2 var(--sans);text-align:center;background:var(--ink);color:var(--on-accent);border-radius:4px;padding:2px 3px;overflow:hidden;overflow-wrap:anywhere;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.cg-ev .nm{display:none}
+.cg-ev .kd{display:inline}
+.cg-ev.due{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.cg-cell.out .cg-ev{opacity:.5}
+a.cg-cell:active{background:var(--chip)}
+.cg-empty{font-size:14px;color:var(--muted);padding:10px 0 4px;border-top:1px solid var(--rule);margin:0}
+.cal.gridded .cal-month{display:none}
+.cal.gridded .cal-item[hidden]{display:none}
+@media (min-width:560px){.cg-cell{min-height:92px;padding:6px 6px}.cg-ev{font-size:11px;-webkit-line-clamp:3}.cg-ev .nm{display:inline}.cg-ev .kd{display:none}}
 .anchor{display:block;height:0;scroll-margin-top:calc(env(safe-area-inset-top) + 64px)}
 section a{overflow-wrap:anywhere}
 .foot{font-size:12px;color:var(--muted);text-align:center;margin:22px 0 0}
@@ -80,7 +104,7 @@ body.off #offline{display:block}
 <div class="wrap">
 <p class="kicker">Omni, project tracker</p>
 <h1>Omni Project Progress Tracker</h1>
-<p class="updated">Tracker saved Nov 15, 2026, 8:43am</p>
+<p class="updated">Tracker saved Nov 15, 2026, 9:53am</p>
 <p id="offline">Offline: showing the last copy saved on this phone</p>
 <p class="lede">A running record of Kobe's local AI video-editing and approval-first posting pipeline, including decisions, development progress and unresolved questions.</p>
 <p class="notice"><b>Ticks save on this phone only.</b> They don't change the tracker note or sync anywhere. When a step is really done, tell Sesame so it's logged in the tracker and shows up here after the next update.</p>
@@ -122,17 +146,17 @@ body.off #offline{display:block}
 </section>
 <section id="calendar">
 <h2>Calendar</h2>
-<p>Exhibition dates and open-call deadlines, soonest first. Times are Eastern unless noted. Tap a date to see what the application needs. Requirements were checked on the official pages on November 15, 2026; anything that could not be confirmed there is marked.</p>
+<p>Exhibition dates and open-call deadlines, soonest first. Times are Eastern unless noted. The month grid opens on today; use the arrows to move between months. Tap a date in the grid, or an entry under it, to see what the application needs. Requirements were checked on the official pages on November 15, 2026; anything that could not be confirmed there is marked.</p>
 <div class="cal">
 <p class="cal-month">November 2026</p>
-<a class="cal-item" href="#cal-articulate-atl"><span class="cal-date"><b>21</b><small>Sat</small></span><span class="cal-what"><b>Articulate ATL group show, Buckhead</b><small>Exhibition. Show 5 to 11 PM</small></span></a>
+<a class="cal-item" data-date="2026-11-21" data-short="Articulate ATL" data-kind="Show" href="#cal-articulate-atl"><span class="cal-date"><b>21</b><small>Sat</small></span><span class="cal-what"><b>Articulate ATL group show, Buckhead</b><small>Exhibition. Show 5 to 11 PM</small></span></a>
 <p class="cal-month">December 2026</p>
-<a class="cal-item" href="#cal-portrait-award"><span class="cal-date"><b>1</b><small>Tue</small></span><span class="cal-what"><b>Portrait Award 2027, London</b><small>Deadline 5 PM (10 PM UK time). £40</small></span></a>
-<a class="cal-item" href="#cal-qiankun"><span class="cal-date"><b>31</b><small>Thu</small></span><span class="cal-what"><b>QIANKUN 2027, Paris</b><small>Deadline 6 PM (midnight Paris time). Free to apply</small></span></a>
+<a class="cal-item" data-date="2026-12-01" data-short="Portrait Award" data-kind="Due" href="#cal-portrait-award"><span class="cal-date"><b>1</b><small>Tue</small></span><span class="cal-what"><b>Portrait Award 2027, London</b><small>Deadline 5 PM (10 PM UK time). £40</small></span></a>
+<a class="cal-item" data-date="2026-12-31" data-short="QIANKUN" data-kind="Due" href="#cal-qiankun"><span class="cal-date"><b>31</b><small>Thu</small></span><span class="cal-what"><b>QIANKUN 2027, Paris</b><small>Deadline 6 PM (midnight Paris time). Free to apply</small></span></a>
 <p class="cal-month">January 2027</p>
-<a class="cal-item" href="#cal-vcca"><span class="cal-date"><b>15</b><small>Fri</small></span><span class="cal-what"><b>VCCA fall residency and Alonzo Davis Fellowship, Virginia</b><small>Deadline, no time of day given. $30, waivable</small></span></a>
+<a class="cal-item" data-date="2027-01-15" data-short="VCCA" data-kind="Due" href="#cal-vcca"><span class="cal-date"><b>15</b><small>Fri</small></span><span class="cal-what"><b>VCCA fall residency and Alonzo Davis Fellowship, Virginia</b><small>Deadline, no time of day given. $30, waivable</small></span></a>
 <p class="cal-month">February 2027</p>
-<a class="cal-item" href="#cal-rp"><span class="cal-date"><b>2</b><small>Tue</small></span><span class="cal-what"><b>RP Annual Exhibition 2027, London</b><small>Deadline 7 AM (noon UK time). £14.50 per work</small></span></a>
+<a class="cal-item" data-date="2027-02-02" data-short="RP Annual" data-kind="Due" href="#cal-rp"><span class="cal-date"><b>2</b><small>Tue</small></span><span class="cal-what"><b>RP Annual Exhibition 2027, London</b><small>Deadline 7 AM (noon UK time). £14.50 per work</small></span></a>
 </div>
 
 <div class="anchor" id="cal-articulate-atl"></div>
@@ -241,6 +265,9 @@ body.off #offline{display:block}
 <h3>November 15, 2026: Added the Calendar with open-call deadlines</h3>
 <p>Kobe asked for a Calendar section with the exhibition deadlines from the morning open-calls briefing, linked to each call's application links and requirements.</p>
 <p><strong>Progress:</strong> The Calendar now sits after To Do. It lists the Articulate ATL group show on November 21 and four deadlines: the Portrait Award (December 1), QIANKUN 2027 (December 31), the VCCA fall residency and Alonzo Davis Fellowship (January 15) and the RP Annual Exhibition (February 2). Each date links to a requirements checklist, checked against the official pages on November 15. The Portrait Award's official rules PDF could not be opened, so its painting rules and image specs are marked as coming from listings. No application has been started or submitted.</p>
+<h3>November 15, 2026: The Calendar became a monthly grid</h3>
+<p>Kobe sent a dark monthly calendar as the look for Omni's Calendar.</p>
+<p><strong>Progress:</strong> The Calendar now opens on a Sunday-first month grid, with thin gray lines, the days before and after the month shown faintly, today circled, previous and next arrows, and a Today button. Each show or deadline sits on its date and opens its requirements checklist; the month's entries are listed under the grid. The dates, requirements and checklists did not change.</p>
 
 </section>
 <section id="project-direction">
@@ -359,6 +386,51 @@ upd();
 const net=()=>document.body.classList.toggle('off',!navigator.onLine);addEventListener('online',net);addEventListener('offline',net);net();
 })();
 </script>
-<script>window.OMNI_BUILD='a5b6642e55';(()=>{const V=window.OMNI_BUILD;let reg=null,busy=false;const check=async()=>{if(busy||!navigator.onLine)return;busy=true;try{if(reg&&reg.waiting)reg.waiting.postMessage('skipWaiting');const r=await fetch('version.json',{cache:'no-store'});if(!r.ok)return;const j=await r.json();if(j.version&&j.version!==V){const k='omni-reloaded-'+j.version;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,'1');await fetch(location.href.split('#')[0],{cache:'reload'}).then(x=>x.text()).catch(()=>{});location.reload();return}}catch(e){}finally{busy=false}};if('serviceWorker' in navigator){addEventListener('load',()=>{navigator.serviceWorker.register('sw.js',{updateViaCache:'none'}).then(r=>{reg=r;check()}).catch(()=>check())})}else{addEventListener('load',check)}document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')check()});addEventListener('pageshow',e=>{if(e.persisted)check()});addEventListener('online',check);})();</script>
+<script>
+(()=>{
+const cal=document.querySelector('.cal');if(!cal)return;
+const items=[...cal.querySelectorAll('.cal-item[data-date]')];
+const MON=['January','February','March','April','May','June','July','August','September','October','November','December'];
+const DOW=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const DAYS=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const key=(y,m,d)=>y+'-'+String(m+1).padStart(2,'0')+'-'+String(d).padStart(2,'0');
+const ev={};items.forEach(a=>{(ev[a.dataset.date]=ev[a.dataset.date]||[]).push(a)});
+const now=()=>new Date();
+let y,m;const goToday=()=>{const t=now();y=t.getFullYear();m=t.getMonth()};goToday();
+const g=document.createElement('div');g.className='calgrid';
+g.innerHTML='<div class="cg-head"><p class="cg-title" aria-live="polite"></p><div class="cg-nav"><button type="button" class="cg-btn today">Today</button><button type="button" class="cg-btn arrow prev" aria-label="Previous month">&#8249;</button><button type="button" class="cg-btn arrow next" aria-label="Next month">&#8250;</button></div></div><div class="cg-dow">'+DOW.map(d=>'<span>'+d+'</span>').join('')+'</div><div class="cg-cells"></div>';
+cal.prepend(g);cal.classList.add('gridded');
+const title=g.querySelector('.cg-title'),cells=g.querySelector('.cg-cells');
+const empty=document.createElement('p');empty.className='cg-empty';cal.append(empty);
+const render=()=>{
+ title.textContent=MON[m]+' '+y;
+ const t=now(),tk=key(t.getFullYear(),t.getMonth(),t.getDate());
+ const first=new Date(y,m,1),start=new Date(y,m,1-first.getDay());
+ const dim=new Date(y,m+1,0).getDate(),weeks=Math.ceil((first.getDay()+dim)/7);
+ cells.replaceChildren();
+ for(let i=0;i<weeks*7;i++){
+  const d=new Date(start.getFullYear(),start.getMonth(),start.getDate()+i);
+  const k=key(d.getFullYear(),d.getMonth(),d.getDate()),list=ev[k]||[];
+  const c=document.createElement(list.length?'a':'div');c.className='cg-cell';
+  if(d.getMonth()!==m)c.classList.add('out');if(k===tk)c.classList.add('today');
+  const n=document.createElement('span');n.className='cg-num';n.textContent=d.getDate();c.append(n);
+  let label=DAYS[d.getDay()]+', '+MON[d.getMonth()]+' '+d.getDate()+(k===tk?', today':'');
+  if(list.length){c.href=list[0].getAttribute('href');
+   list.forEach(a=>{const s=document.createElement('span');s.className='cg-ev'+(a.dataset.kind==='Due'?' due':'');const f=document.createElement('span');f.className='nm';f.textContent=a.dataset.short;const k2=document.createElement('span');k2.className='kd';k2.textContent=a.dataset.kind==='Due'?'Due':'Show';s.append(f,k2);c.append(s);label+='. '+(a.dataset.kind==='Due'?'Deadline: ':'')+a.querySelector('.cal-what b').textContent})}
+  c.setAttribute('aria-label',label);cells.append(c);
+ }
+ let shown=0;items.forEach(a=>{const [ay,am]=a.dataset.date.split('-').map(Number);const on=ay===y&&am-1===m;a.hidden=!on;if(on)shown++});
+ empty.hidden=!!shown;empty.textContent='No shows or deadlines in '+MON[m]+' '+y+'.';
+};
+const step=n=>{m+=n;if(m<0){m=11;y--}if(m>11){m=0;y++}render()};
+g.querySelector('.prev').onclick=()=>step(-1);g.querySelector('.next').onclick=()=>step(1);
+g.querySelector('.today').onclick=()=>{goToday();render()};
+let sx=0,sy=0;g.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;sy=e.touches[0].clientY},{passive:true});
+g.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;if(Math.abs(dx)>50&&Math.abs(dx)>2*Math.abs(dy))step(dx<0?1:-1)},{passive:true});
+let day=now().toDateString();document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&now().toDateString()!==day){day=now().toDateString();render()}});
+render();
+})();
+</script>
+<script>window.OMNI_BUILD='38864c74bb';(()=>{const V=window.OMNI_BUILD;let reg=null,busy=false;const check=async()=>{if(busy||!navigator.onLine)return;busy=true;try{if(reg&&reg.waiting)reg.waiting.postMessage('skipWaiting');const r=await fetch('version.json',{cache:'no-store'});if(!r.ok)return;const j=await r.json();if(j.version&&j.version!==V){const k='omni-reloaded-'+j.version;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,'1');await fetch(location.href.split('#')[0],{cache:'reload'}).then(x=>x.text()).catch(()=>{});location.reload();return}}catch(e){}finally{busy=false}};if('serviceWorker' in navigator){addEventListener('load',()=>{navigator.serviceWorker.register('sw.js',{updateViaCache:'none'}).then(r=>{reg=r;check()}).catch(()=>check())})}else{addEventListener('load',check)}document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')check()});addEventListener('pageshow',e=>{if(e.persisted)check()});addEventListener('online',check);})();</script>
 </body>
 </html>
