@@ -138,6 +138,26 @@ ul.check li[hidden]{display:none}
 .moved-toast span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .moved-toast button{flex:none;appearance:none;border:1px solid var(--on-accent);background:transparent;color:var(--on-accent);font:600 13px/1 var(--sans);height:30px;padding:0 12px;border-radius:999px;cursor:pointer}
 @media (min-width:560px){.dn-k{font-size:11px;padding:2px}.dn-k .nm{display:inline}.dn-k .sh{display:none}.dn-legend{display:none}}
+.folders{margin:4px 0 12px}
+.folder{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid var(--ink);border-radius:12px;text-decoration:none;color:var(--ink);margin:0 0 8px;-webkit-tap-highlight-color:transparent}
+.folder:active{background:var(--chip)}
+.folder .f-ico{flex:none;width:28px;height:28px}
+.folder .f-main{flex:1;min-width:0}
+.folder .f-main b{display:block;font:600 17px/1.25 var(--serif)}
+.folder .f-main small{display:block;font-size:13px;line-height:1.35;color:var(--muted);margin-top:2px;overflow-wrap:anywhere}
+.folder .f-meter{display:block;height:4px;background:var(--chip);border-radius:999px;overflow:hidden;margin-top:8px}
+.folder .f-meter i{display:block;height:100%;background:var(--ink);border-radius:999px}
+.folder .f-pct{flex:none;text-align:right;font:600 20px/1 var(--serif)}
+.folder .f-pct small{display:block;font:500 10px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.folder::after{content:"\203A";flex:none;color:var(--muted);font-size:20px;line-height:1}
+.proj{display:none;scroll-margin-top:calc(env(safe-area-inset-top) + 64px)}
+.proj:target,.proj.open{display:block}
+#projects.viewing .folders,#projects.viewing>p{display:none}
+#projects:has(.proj:target) .folders,#projects:has(.proj:target)>p{display:none}
+.proj-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 8px}
+.proj-back{display:inline-flex;align-items:center;height:32px;padding:0 12px;border:1px solid var(--rule);background:var(--chip);border-radius:999px;font:600 13px/1 var(--sans);text-decoration:none;color:var(--ink)}
+.proj-title{font-size:22px;margin:4px 0 6px}
+.proj h4{font:500 11px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:18px 0 6px;padding-top:12px;border-top:1px solid var(--rule)}
 .anchor{display:block;height:0;scroll-margin-top:calc(env(safe-area-inset-top) + 64px)}
 section a{overflow-wrap:anywhere}
 .foot{font-size:12px;color:var(--muted);text-align:center;margin:22px 0 0}
@@ -149,12 +169,12 @@ body.off #offline{display:block}
 <div class="wrap">
 <p class="kicker">Omni, project tracker</p>
 <h1>Omni Project Progress Tracker</h1>
-<p class="updated">Tracker saved Nov 15, 2026, 10:14am</p>
+<p class="updated">Tracker saved Nov 15, 2026, 11:34am</p>
 <p id="offline">Offline: showing the last copy saved on this phone</p>
 <p class="lede">A running record of Kobe's local AI video-editing and approval-first posting pipeline, including decisions, development progress and unresolved questions.</p>
 <p class="notice"><b>Ticks save on this phone only.</b> A ticked To Do item moves to Completed, and Back to To Do there returns it. The times in Completed and anything you add there also save on this phone only. They don't change the tracker note or sync anywhere. When a step is really done, tell Sesame so it's logged in the tracker and shows up here after the next update.</p>
 <div class="meter" aria-live="polite"><div class="bar"><i id="meterbar"></i></div><span id="metertext"></span></div>
-<nav class="jump" aria-label="Tracker sections"><a class="map" href="./">3D Map</a><a href="#to-do">To Do</a><a href="#calendar">Calendar</a><a href="#completed">Completed</a><a href="#progress-log">Log</a><a href="#project-direction">Direction</a><a href="#vision">Vision</a><a href="#research">Research</a><a href="#current-baseline">Baseline</a><a href="#open-items">Open Items</a></nav>
+<nav class="jump" aria-label="Tracker sections"><a class="map" href="./">3D Map</a><a href="#to-do">To Do</a><a href="#calendar">Calendar</a><a href="#completed">Completed</a><a href="#projects">Projects</a><a href="#progress-log">Log</a><a href="#project-direction">Direction</a><a href="#vision">Vision</a><a href="#research">Research</a><a href="#current-baseline">Baseline</a><a href="#open-items">Open Items</a></nav>
 <section id="to-do">
 <h2>To Do</h2>
 <p>These are build steps, not completed work. Start with one working local test before expanding the pipeline.</p>
@@ -295,7 +315,94 @@ body.off #offline{display:block}
 <div class="dn-src" data-date="2026-11-15" data-time="09:56" data-kind="Created" hidden><b>The Calendar became a monthly grid</b><small>Sunday-first, today circled, swipe between months.</small></div>
 <div class="dn-src" data-date="2026-11-15" data-time="10:04" data-kind="Created" hidden><b>Completed, this progress calendar</b><small>White month grid of what you achieve, are inspired by and create.</small></div>
 <div class="dn-src" data-date="2026-11-15" data-time="10:14" data-kind="Created" hidden><b>Ticked To Do items move to Completed</b><small>Completed went black and white; Back to To Do returns an item to the list.</small></div>
+<div class="dn-src" data-date="2026-11-15" data-time="11:34" data-kind="Created" hidden><b>Projects, starting with the Omni Editor</b><small>A project folder with its timeline, estimated progress and to-do list. See <a href="#projects">Projects</a>.</small></div>
 <div class="dn-src" data-date="2026-11-14" data-time="12:22" data-kind="Done" data-task="e9e06362cd7f" hidden><b>Set up GitHub Pages hosting for mobile web app.</b><small>To Do item</small></div>
+</div>
+
+</section>
+<section id="projects">
+<h2>Projects</h2>
+<p>Each project is a folder. Open it for its timeline, estimated progress and to-do list.</p>
+
+<div class="folders">
+<a class="folder" href="#project-omni-editor" aria-label="Open the Omni Editor project, 14 percent estimated"><svg class="f-ico" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><path d="M3 6.5A1.5 1.5 0 0 1 4.5 5h4.2l2 2.2h8.8A1.5 1.5 0 0 1 21 8.7v9.8a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 18.5z"/><path d="M3 10h18"/></svg><span class="f-main"><b>Omni Editor</b><small>An editor that turns your own video or podcast audio into a finished, polished video by itself.</small><span class="f-meter" aria-hidden="true"><i style="width:14%"></i></span></span><span class="f-pct">14%<small>estimated</small></span></a>
+</div>
+<div class="proj" id="project-omni-editor">
+<div class="proj-top"><a class="proj-back" href="#projects">&#8249; All projects</a><span class="kicker">Project folder</span></div>
+<h3 class="proj-title">Omni Editor</h3>
+<div class="meter proj-meter"><div class="bar"><i style="width:14%"></i></div><span>14% estimated</span></div>
+
+<p>An editor that turns your own video or podcast audio into a finished, polished video by itself.</p>
+<p><strong>Estimated progress:</strong> 14% of the full editor. This is an estimate from the milestone weights below, not a measure of finished code. None of the intelligent editing is built yet: what exists is the foundation and an interface, and neither has run on your Mac.</p>
+<h4>The dream</h4>
+<ul>
+<li><strong>Input:</strong> your own video, or podcast audio.</li>
+<li><strong>Understanding:</strong> it reads the transcript and listens to the audio for what you are saying and where the strong moments and pauses are.</li>
+<li><strong>Cuts:</strong> it decides where to cut.</li>
+<li><strong>Visuals:</strong> it picks fitting reference images and paintings you have approved.</li>
+<li><strong>Motion:</strong> it adds animations, orbit-like effects and motion graphics that match what you are saying.</li>
+<li><strong>Storyboard selector:</strong> before the final video, it lays the edit out as a storyboard in sections. You see each section's progress, and you review and approve the sections one by one.</li>
+<li><strong>Output:</strong> once the sections are approved, it renders a polished video you can play, automatically.</li>
+</ul>
+<h4>Where it stands</h4>
+<ul>
+<li><strong>Built:</strong> the Video Pipeline foundation. It copies the video so the original is never touched, transcribes it with Whisper, makes a captions file, evens out the loudness and exports an MP4. It makes no cuts, no reordering, no music and no effects.</li>
+<li><strong>Built:</strong> the Kintsugi interface, with Import, Jobs and Details panels. It is the window around the foundation, not editing ability.</li>
+<li><strong>Tested only on Sesame's test machine:</strong> both of the above. Neither has been installed or run end to end on your Mac yet.</li>
+<li><strong>Not built:</strong> reading meaning from the transcript, deciding cuts, choosing images and paintings, animations and effects, the storyboard selector with section-by-section review, and automatic rendering of an edited video. The interface's Jobs panel shows progress for each video, not for each section of an edit.</li>
+<li><strong>Draft, not approved:</strong> the Blue Seam editing style. It is not in use and is not a settled requirement.</li>
+</ul>
+<h4>Timeline</h4>
+<p>What has actually happened, in order. Days without a recorded date say so; no future dates are set.</p>
+<ul>
+<li><strong>November 10, 2026:</strong> Defined the local editing workflow: put in footage, study references, make a style sheet, approve a storyboard, then edit.</li>
+<li><strong>Date not recorded:</strong> Video tools on the Mac. Whisper's small "tiny" model and FFmpeg are on the Mac. Remotion hit permission problems, and HyperFrames was never confirmed working after Chrome crashed.</li>
+<li><strong>November 15, 2026:</strong> Built the Video Pipeline foundation and tested it on Sesame's test machine: a spoken clip and a silent vertical clip both came out as playable MP4s with captions.</li>
+<li><strong>November 15, 2026:</strong> Claude, in your free chat, wrote the Kintsugi three-panel interface. It was checked in a test browser at laptop and iPhone sizes, not on your Mac.</li>
+<li><strong>November 15, 2026:</strong> Studied three Instagram editing references and drafted the Blue Seam style. One reel downloaded without sound. The draft is waiting for your review.</li>
+<li><strong>November 15, 2026:</strong> Checked <a target="_blank" rel="noopener" href="https://github.com/Jakubantalik/thinking-orbs">Thinking Orbs</a> by reading its code and license (not run). It is a free animation library that could supply an orbit-style overlay, but it does not analyse or edit video. <a target="_blank" rel="noopener" href="https://github.com/heygen-com/hyperframes">HyperFrames</a> was proposed to render the edits; it is not confirmed on your Mac.</li>
+<li><strong>November 15, 2026:</strong> Created this project in Omni.</li>
+<li><strong>November 15, 2026:</strong> Added a storyboard selector to the plan: before the final video, progress shows for each section, and each section is reviewed and approved on its own.</li>
+<li><strong>In progress:</strong> Reviewing your TikTok editing reference.</li>
+</ul>
+<h4>How the estimate works</h4>
+<p>Each milestone has a weight; together they make 100%. A milestone that is done earns its full weight. Work that is built and tested but has not yet run on your Mac earns half. Proposed work, research still under way and planning earn nothing.</p>
+<ul>
+<li><strong>Vision and scope defined</strong> (5%): done. Earned 5%.</li>
+<li><strong>Foundation pipeline: copy, transcribe, captions, loudness, export</strong> (10%): built and tested off your Mac. Earned 5%.</li>
+<li><strong>App interface</strong> (4%): built and tested off your Mac. Earned 2%.</li>
+<li><strong>Reference and tool checks</strong> (4%, 1% each): Instagram references studied and Thinking Orbs checked are done; the TikTok reference is in progress and the renderer is not confirmed. Earned 2%.</li>
+<li><strong>Understanding the transcript and audio, and deciding cuts</strong> (14%): not started. Earned 0%.</li>
+<li><strong>Library of approved paintings and reference images, and matching them to what is said</strong> (8%): not started. Earned 0%.</li>
+<li><strong>Animations, orbit effects and motion graphics</strong> (14%): not started. Earned 0%.</li>
+<li><strong>Storyboard selector before the final video: progress for each section, and section-by-section review and approval</strong> (7%): not started. Earned 0%.</li>
+<li><strong>Automatic rendering of the edited video</strong> (10%): not started. Earned 0%.</li>
+<li><strong>First proof of concept from your footage and one approved painting</strong> (10%): not started. Earned 0%.</li>
+<li><strong>Your review and approval of the look</strong> (4%): not started. Earned 0%.</li>
+<li><strong>Reusable effects and templates</strong> (6%): not started. Earned 0%.</li>
+<li><strong>Built into the app</strong> (4%): not started. Earned 0%.</li>
+</ul>
+<p>The storyboard selector was added to the plan after the first estimate. Its weight came from milestones not yet started, so the 14% earned did not change.</p>
+<p>Total earned: 14%. Installing the foundation and its interface on your Mac and running one clip through them would bring this to 21%.</p>
+<h4>To Do</h4>
+<p>In order. The first proof of concept is a 20 to 30 second clip with one cut at a natural pause, your painting appearing when you start talking about it, one orb animation in your colours, and captions that come in on each spoken word.</p>
+<ul class="check numbered">
+<li><label><b class="num">1.</b><input type="checkbox" data-id="33c2f5af43ff"><span>Finish reviewing the TikTok editing reference.</span></label></li>
+<li><label><b class="num">2.</b><input type="checkbox" data-id="66df8b23af6b"><span>Install the Video Pipeline on the Mac and run one short clip all the way through.</span></label></li>
+<li><label><b class="num">3.</b><input type="checkbox" data-id="f5d728b0948b"><span>Check the Mac's Node version and get HyperFrames to render one test video.</span></label></li>
+<li><label><b class="num">4.</b><input type="checkbox" data-id="fcae7942e9ca"><span>Choose one 20 to 30 second clip: real footage or a podcast bite.</span></label></li>
+<li><label><b class="num">5.</b><input type="checkbox" data-id="22bd9d83a413"><span>Choose one painting you approve for the test, such as a Blue Boy image, and copy it into the project yourself.</span></label></li>
+<li><label><b class="num">6.</b><input type="checkbox" data-id="90409df2d8b7"><span>Add a timestamp for every word and pause detection to the transcription step.</span></label></li>
+<li><label><b class="num">7.</b><input type="checkbox" data-id="c573c7d168f4"><span>Write the edit plan for the test clip: the cut, the painting moment and the orb overlay, each with its exact time.</span></label></li>
+<li><label><b class="num">8.</b><input type="checkbox" data-id="ba45825f2992"><span>Lay the test clip's edit plan out as a storyboard in sections, then review and approve each section before anything is rendered.</span></label></li>
+<li><label><b class="num">9.</b><input type="checkbox" data-id="542165413cd3"><span>Render the proof of concept from the approved sections, with the original video underneath.</span></label></li>
+<li><label><b class="num">10.</b><input type="checkbox" data-id="f3678b6705ca"><span>Watch the proof of concept and note what to change.</span></label></li>
+<li><label><b class="num">11.</b><input type="checkbox" data-id="cd77e1bac3e3"><span>Decide on the editing style. Blue Seam is a draft until you approve it.</span></label></li>
+<li><label><b class="num">12.</b><input type="checkbox" data-id="4516cbf7216a"><span>Turn the approved look into reusable presets, such as "painting reveal" and "idea orbit".</span></label></li>
+<li><label><b class="num">13.</b><input type="checkbox" data-id="a39e0ac63fc9"><span>Build the storyboard selector into the app: progress shown for each section, and section-by-section review and approval before the final video is rendered.</span></label></li>
+<li><label><b class="num">14.</b><input type="checkbox" data-id="d806876ba852"><span>Add the presets to the app.</span></label></li>
+</ul>
+<div class="tools"><button type="button" class="tbtn reset">Clear ticks</button></div>
 </div>
 
 </section>
@@ -336,6 +443,9 @@ body.off #offline{display:block}
 <h3>November 15, 2026: Completed went black and white; ticked To Do items move there</h3>
 <p>Kobe asked for Completed to go back to Omni's black and white, for a ticked To Do item to leave the To Do list and move to Completed, and for a way to uncheck it from Completed so it goes back to the To Do list.</p>
 <p><strong>Progress:</strong> Completed now uses the same black background and white text as the rest of Omni. Ticking a To Do box takes the item off the To Do list and puts it in Completed with the day and time, with an Undo for a few seconds. Each ticked item in Completed has a Back to To Do button that unticks it and returns it to its place in the list. The item ticked in this tracker (GitHub Pages hosting) can be returned the same way on a phone, which only changes that phone. Phone ticks still save on that phone only. The dark Calendar and its checklists did not change.</p>
+<h3>November 15, 2026: Added Projects, starting with the Omni Editor</h3>
+<p>Kobe asked for a Projects section with a project called the Omni Editor, opening its timeline, a percentage completion tracker and a to-do list, and asked how far the project is from the full dream.</p>
+<p><strong>Progress:</strong> Projects sits after Completed in the menu. The Omni Editor folder opens its timeline, an estimated 14% from weighted milestones and a 14-step to-do list. Kobe then added a storyboard selector before the final video, with progress shown for each section and each section reviewed and approved on its own; it is in the plan, the milestones and the to-do list, and is not built. The estimate is not a measure of finished code: none of the intelligent editing is built, and the foundation and interface have not run on the Mac. The To Do list, Calendar and Completed did not change.</p>
 
 </section>
 <section id="project-direction">
@@ -618,6 +728,17 @@ let day=now().toDateString();document.addEventListener('visibilitychange',()=>{i
 sync();render();place();
 })();
 </script>
-<script>window.OMNI_BUILD='0433132865';(()=>{const V=window.OMNI_BUILD;let reg=null,busy=false;const check=async()=>{if(busy||!navigator.onLine)return;busy=true;try{if(reg&&reg.waiting)reg.waiting.postMessage('skipWaiting');const r=await fetch('version.json',{cache:'no-store'});if(!r.ok)return;const j=await r.json();if(j.version&&j.version!==V){const k='omni-reloaded-'+j.version;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,'1');await fetch(location.href.split('#')[0],{cache:'reload'}).then(x=>x.text()).catch(()=>{});location.reload();return}}catch(e){}finally{busy=false}};if('serviceWorker' in navigator){addEventListener('load',()=>{navigator.serviceWorker.register('sw.js',{updateViaCache:'none'}).then(r=>{reg=r;check()}).catch(()=>check())})}else{addEventListener('load',check)}document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')check()});addEventListener('pageshow',e=>{if(e.persisted)check()});addEventListener('online',check);})();</script>
+<script>
+(()=>{
+// Projects: a folder opens its project view; All projects (or any other section) closes it.
+const sec=document.getElementById('projects');if(!sec)return;
+const views=[...sec.querySelectorAll('.proj')];
+const sync=()=>{let h='';try{h=decodeURIComponent(location.hash.slice(1))}catch(e){}
+ const t=h&&document.getElementById(h),p=t?(t.classList.contains('proj')?t:t.closest('.proj')):null;
+ views.forEach(v=>v.classList.toggle('open',v===p));sec.classList.toggle('viewing',!!p)};
+addEventListener('hashchange',sync);sync();
+})();
+</script>
+<script>window.OMNI_BUILD='45c7898c54';(()=>{const V=window.OMNI_BUILD;let reg=null,busy=false;const check=async()=>{if(busy||!navigator.onLine)return;busy=true;try{if(reg&&reg.waiting)reg.waiting.postMessage('skipWaiting');const r=await fetch('version.json',{cache:'no-store'});if(!r.ok)return;const j=await r.json();if(j.version&&j.version!==V){const k='omni-reloaded-'+j.version;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,'1');await fetch(location.href.split('#')[0],{cache:'reload'}).then(x=>x.text()).catch(()=>{});location.reload();return}}catch(e){}finally{busy=false}};if('serviceWorker' in navigator){addEventListener('load',()=>{navigator.serviceWorker.register('sw.js',{updateViaCache:'none'}).then(r=>{reg=r;check()}).catch(()=>check())})}else{addEventListener('load',check)}document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')check()});addEventListener('pageshow',e=>{if(e.persisted)check()});addEventListener('online',check);})();</script>
 </body>
 </html>
