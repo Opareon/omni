@@ -93,6 +93,45 @@ a.cg-cell:active{background:var(--chip)}
 .cal.gridded .cal-month{display:none}
 .cal.gridded .cal-item[hidden]{display:none}
 @media (min-width:560px){.cg-cell{min-height:92px;padding:6px 6px}.cg-ev{font-size:11px;-webkit-line-clamp:3}.cg-ev .nm{display:inline}.cg-ev .kd{display:none}}
+section#completed{--ground:#ffffff;--card:#ffffff;--ink:#000000;--muted:#5f5f5f;--rule:#d4d4d4;--chip:#f0f0f0;--accent:#000000;--on-accent:#ffffff;background:#ffffff;color:#000000;border-color:#ffffff;color-scheme:light}
+.donecal{margin:4px 0 12px}
+.donecal .calgrid{margin-bottom:8px}
+.donecal .cg-cell{appearance:none;-webkit-appearance:none;border:0;border-bottom:1px solid var(--rule);border-right:1px solid var(--rule);border-radius:0;background:transparent;font:inherit;color:inherit;text-align:left;cursor:default;margin:0}
+.donecal .cg-cells .cg-cell:nth-child(7n){border-right:0}
+.donecal button.cg-cell{cursor:pointer}
+.donecal button.cg-cell:active{background:var(--chip)}
+.donecal .cg-cell.out{color:#b5b5b5}
+.donecal .cg-cell.out .dn-k{opacity:.45}
+.donecal .cg-cell.sel{background:var(--chip);box-shadow:inset 0 0 0 2px var(--ink)}
+.dn-year{font:500 12px/1.35 var(--mono);color:var(--muted);margin:-4px 0 10px}
+.dn-k{display:block;font:600 9.5px/1.25 var(--sans);letter-spacing:-.01em;text-align:center;border:1px solid var(--ink);border-radius:4px;padding:2px 0;white-space:nowrap;overflow:hidden}
+.dn-k.k-achieved{background:var(--ink);color:var(--on-accent)}
+.dn-k.k-created{background:var(--card);color:var(--ink)}
+.dn-k.k-inspired{background:var(--card);color:var(--ink);border-style:dashed}
+.dn-k.k-done{background:#e4e4e4;color:var(--ink);border-color:#e4e4e4}
+.dn-k .nm{display:none}
+.dn-legend{font-size:12px;line-height:1.4;color:var(--muted);margin:0 0 12px}
+.dn-add{display:flex;gap:6px;align-items:center;margin:0 0 4px}
+.dn-add select,.dn-add input{appearance:none;-webkit-appearance:none;height:38px;border:1px solid var(--rule);border-radius:10px;background:var(--card);color:var(--ink);font:15px/1.2 var(--sans);padding:0 10px;min-width:0}
+.dn-add select{flex:none;width:108px;padding-right:22px;background-image:linear-gradient(45deg,transparent 50%,#000 50%),linear-gradient(135deg,#000 50%,transparent 50%);background-position:calc(100% - 13px) 17px,calc(100% - 8px) 17px;background-size:5px 5px;background-repeat:no-repeat}
+.dn-add input{flex:1}
+.dn-add .cg-btn{flex:none;height:38px;background:var(--ink);color:var(--on-accent);border-color:var(--ink)}
+.dn-hint{font-size:12px;color:var(--muted);margin:0 0 14px}
+.dn-listhead{display:flex;align-items:center;justify-content:space-between;gap:8px;border-top:1px solid var(--ink);padding-top:12px;margin-top:4px;scroll-margin-top:calc(env(safe-area-inset-top) + 64px)}
+.dn-lt{font:600 18px/1.2 var(--serif);margin:0}
+.dn-day{font:500 11px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:14px 0 2px}
+.dn-item{padding:9px 0;border-top:1px solid var(--rule)}
+.dn-day+.dn-item{border-top:0}
+.dn-top{display:flex;align-items:center;gap:8px;margin:0 0 4px}
+.dn-top .dn-k{display:inline-block;font:600 10px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:4px 6px}
+.dn-time{margin-left:auto;font:500 12px/1 var(--mono);color:var(--muted);white-space:nowrap}
+.dn-x{appearance:none;border:0;background:transparent;color:var(--muted);font-size:20px;line-height:1;padding:0 2px;cursor:pointer}
+.dn-what{font-size:15px;line-height:1.4;overflow-wrap:anywhere}
+.dn-what b{display:block;font-weight:600}
+.dn-what small{display:block;font-size:13px;color:var(--muted);margin-top:2px}
+.dn-what code{font:13px var(--mono)}
+.dn-empty{font-size:14px;color:var(--muted);margin:10px 0 4px}
+@media (min-width:560px){.dn-k{font-size:11px;padding:2px}.dn-k .nm{display:inline}.dn-k .sh{display:none}.dn-legend{display:none}}
 .anchor{display:block;height:0;scroll-margin-top:calc(env(safe-area-inset-top) + 64px)}
 section a{overflow-wrap:anywhere}
 .foot{font-size:12px;color:var(--muted);text-align:center;margin:22px 0 0}
@@ -104,12 +143,12 @@ body.off #offline{display:block}
 <div class="wrap">
 <p class="kicker">Omni, project tracker</p>
 <h1>Omni Project Progress Tracker</h1>
-<p class="updated">Tracker saved Nov 15, 2026, 9:53am</p>
+<p class="updated">Tracker saved Nov 15, 2026, 10:04am</p>
 <p id="offline">Offline: showing the last copy saved on this phone</p>
 <p class="lede">A running record of Kobe's local AI video-editing and approval-first posting pipeline, including decisions, development progress and unresolved questions.</p>
-<p class="notice"><b>Ticks save on this phone only.</b> They don't change the tracker note or sync anywhere. When a step is really done, tell Sesame so it's logged in the tracker and shows up here after the next update.</p>
+<p class="notice"><b>Ticks save on this phone only.</b> So do the times in Completed and anything you add there. They don't change the tracker note or sync anywhere. When a step is really done, tell Sesame so it's logged in the tracker and shows up here after the next update.</p>
 <div class="meter" aria-live="polite"><div class="bar"><i id="meterbar"></i></div><span id="metertext"></span></div>
-<nav class="jump" aria-label="Tracker sections"><a class="map" href="./">3D Map</a><a href="#to-do">To Do</a><a href="#calendar">Calendar</a><a href="#progress-log">Log</a><a href="#project-direction">Direction</a><a href="#vision">Vision</a><a href="#research">Research</a><a href="#current-baseline">Baseline</a><a href="#open-items">Open Items</a></nav>
+<nav class="jump" aria-label="Tracker sections"><a class="map" href="./">3D Map</a><a href="#to-do">To Do</a><a href="#calendar">Calendar</a><a href="#completed">Completed</a><a href="#progress-log">Log</a><a href="#project-direction">Direction</a><a href="#vision">Vision</a><a href="#research">Research</a><a href="#current-baseline">Baseline</a><a href="#open-items">Open Items</a></nav>
 <section id="to-do">
 <h2>To Do</h2>
 <p>These are build steps, not completed work. Start with one working local test before expanding the pipeline.</p>
@@ -237,6 +276,22 @@ body.off #offline{display:block}
 <p><a href="#calendar">Back to the calendar</a></p>
 <div class="tools"><button type="button" class="tbtn reset">Clear ticks</button></div>
 </section>
+<section id="completed">
+<h2>Completed</h2>
+<p>Your year in progress: what was achieved, what idea was inspired, what was created, and each To Do item that got done, on the day it happened. Tap a day to see it. Entries from before this calendar existed carry the time each change was published; the November 10 start has no time recorded.</p>
+<p>Tick a box in To Do and it lands here with the day and time you ticked it. Untick it and it comes off. Ticks and anything you add here save on this phone only; tell Sesame and it goes into the tracker for good.</p>
+<div class="donecal">
+<div class="dn-src" data-date="2026-11-10" data-time="" data-kind="Created" hidden><b>Started the Omni project tracker</b><small>A running record of the editing and posting pipeline, keeping plans apart from verified work.</small></div>
+<div class="dn-src" data-date="2026-11-14" data-time="12:21" data-kind="Achieved" hidden><b>Launched Omni as a mobile web app</b><small>Live at <a target="_blank" rel="noopener" href="https://opareon.github.io/omni/">opareon.github.io/omni</a>. You opened it on your iPhone and called it a big achievement.</small></div>
+<div class="dn-src" data-date="2026-11-14" data-time="14:52" data-kind="Inspired" hidden><b>Mapped the five-year creative journey</b><small>Years 1 to 3 build the car and your footprint; years 4 to 5 create space for others. See <a href="#vision">Vision</a>.</small></div>
+<div class="dn-src" data-date="2026-11-14" data-time="20:05" data-kind="Created" hidden><b>Every 3D map project opens its full notes</b><small>Each project in the map opens its saved notes, files and pages.</small></div>
+<div class="dn-src" data-date="2026-11-15" data-time="08:44" data-kind="Created" hidden><b>The Calendar, with open-call deadlines</b><small>The Articulate ATL show and four deadlines, each with its requirements.</small></div>
+<div class="dn-src" data-date="2026-11-15" data-time="09:56" data-kind="Created" hidden><b>The Calendar became a monthly grid</b><small>Sunday-first, today circled, swipe between months.</small></div>
+<div class="dn-src" data-date="2026-11-15" data-time="10:04" data-kind="Created" hidden><b>Completed, this progress calendar</b><small>White month grid of what you achieve, are inspired by and create.</small></div>
+<div class="dn-src" data-date="2026-11-14" data-time="12:22" data-kind="Done" data-task="e9e06362cd7f" hidden><b>Set up GitHub Pages hosting for mobile web app.</b><small>To Do item</small></div>
+</div>
+
+</section>
 <section id="progress-log">
 <h2>Progress log</h2>
 <h3>November 10, 2026: Defined the local editing foundation</h3>
@@ -268,6 +323,9 @@ body.off #offline{display:block}
 <h3>November 15, 2026: The Calendar became a monthly grid</h3>
 <p>Kobe sent a dark monthly calendar as the look for Omni's Calendar.</p>
 <p><strong>Progress:</strong> The Calendar now opens on a Sunday-first month grid, with thin gray lines, the days before and after the month shown faintly, today circled, previous and next arrows, and a Today button. Each show or deadline sits on its date and opens its requirements checklist; the month's entries are listed under the grid. The dates, requirements and checklists did not change.</p>
+<h3>November 15, 2026: Added Completed, a white progress calendar</h3>
+<p>Kobe asked for a separate Completed section: an inverted, white month calendar that tracks his year's progress through what was achieved, what idea was inspired and what was created each day, with ticked To Do items on the day and at the time they were done.</p>
+<p><strong>Progress:</strong> Completed sits after Calendar in the menu. Ticking a To Do box on the phone records the day and time and puts it on that date; unticking takes it off. Achieved, Inspired and Created entries can be added for today on the phone, and Sesame adds them to the tracker itself. Phone ticks and phone entries save on that phone only. Earlier milestones from this log were added with the times their changes were published; the November 10 start has no time recorded. The dark Calendar, the To Do list and existing ticks did not change.</p>
 
 </section>
 <section id="project-direction">
@@ -369,6 +427,7 @@ body.off #offline{display:block}
 <section id="continuing-the-tracker">
 <h2>Continuing the tracker</h2>
 <p>Add future updates to this same log as Kobe shares progress or tests produce results. Record what changed, what was actually tested, the outcome, any blocker and the next step agreed with Kobe. Keep planned, in progress and verified complete distinct. Do not mark an installation, edit, connection or post complete without evidence.</p>
+<p><strong>Completed entries:</strong> when Kobe says something was achieved, an idea was inspired or something was created, add a line to Completed as <code>- YYYY-MM-DD HH:MM | Achieved | Title | short note</code> (Inspired or Created in place of Achieved; <code>time unknown</code> when no time is known; the note is optional). When a To Do item is done, tick it (<code>[x]</code>) and add <code>&lt;!--done YYYY-MM-DD HH:MM--&gt;</code> at the end of its line, so it lands on that day in Completed. A ticked item without that comment shows under "Done, date not recorded". Never invent a time.</p>
 
 </section>
 <p class="foot">Omni, a web app saved to your Home Screen. This copy is a snapshot of your tracker note.</p>
@@ -431,6 +490,104 @@ let day=now().toDateString();document.addEventListener('visibilitychange',()=>{i
 render();
 })();
 </script>
-<script>window.OMNI_BUILD='38864c74bb';(()=>{const V=window.OMNI_BUILD;let reg=null,busy=false;const check=async()=>{if(busy||!navigator.onLine)return;busy=true;try{if(reg&&reg.waiting)reg.waiting.postMessage('skipWaiting');const r=await fetch('version.json',{cache:'no-store'});if(!r.ok)return;const j=await r.json();if(j.version&&j.version!==V){const k='omni-reloaded-'+j.version;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,'1');await fetch(location.href.split('#')[0],{cache:'reload'}).then(x=>x.text()).catch(()=>{});location.reload();return}}catch(e){}finally{busy=false}};if('serviceWorker' in navigator){addEventListener('load',()=>{navigator.serviceWorker.register('sw.js',{updateViaCache:'none'}).then(r=>{reg=r;check()}).catch(()=>check())})}else{addEventListener('load',check)}document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')check()});addEventListener('pageshow',e=>{if(e.persisted)check()});addEventListener('online',check);})();</script>
+<script>
+(()=>{
+const box=document.querySelector('.donecal');if(!box)return;
+const LK='omni-done-times-v1',EK='omni-entries-v1';
+const rd=(k,f)=>{try{return JSON.parse(localStorage.getItem(k))||f}catch(e){return f}};
+const wr=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+const MON=['January','February','March','April','May','June','July','August','September','October','November','December'];
+const DOW=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const DAYS=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const KINDS=['Achieved','Created','Inspired','Done'],SHORT={Achieved:'Win',Created:'Made',Inspired:'Idea',Done:'Done'};
+const pad=n=>String(n).padStart(2,'0');
+const key=(y,m,d)=>y+'-'+pad(m+1)+'-'+pad(d);
+const dk=t=>key(t.getFullYear(),t.getMonth(),t.getDate());
+const hm=t=>pad(t.getHours())+':'+pad(t.getMinutes());
+const t12=t=>{if(!t)return 'Time not recorded';const [h,mi]=t.split(':').map(Number);return ((h%12)||12)+':'+pad(mi)+' '+(h<12?'AM':'PM')};
+const src=[...box.querySelectorAll('.dn-src')].map(e=>({d:e.dataset.date,t:e.dataset.time,kind:e.dataset.kind,html:e.innerHTML,from:'note'}));
+const boxes=[...document.querySelectorAll('ul.check input[data-id]')].filter(b=>!b.disabled);
+const textOf=b=>b.closest('label').querySelector('span').textContent.trim();
+let log=rd(LK,{}),mine=rd(EK,[]);if(!Array.isArray(mine))mine=[];
+// a time is kept only while its box stays ticked: unticking (or Clear ticks) takes the entry off
+const sync=()=>{let ch=false;boxes.forEach(b=>{if(!b.checked&&log[b.dataset.id]){delete log[b.dataset.id];ch=true}});if(ch)wr(LK,log)};
+const collect=()=>{const dated=[],undated=[];
+ src.forEach(e=>(e.d?dated:undated).push(e));
+ boxes.forEach(b=>{if(!b.checked)return;const at=log[b.dataset.id];
+  if(at){const t=new Date(at);dated.push({d:dk(t),t:hm(t),kind:'Done',text:textOf(b),sub:'To Do item, ticked on this phone',from:'phone'})}
+  else undated.push({d:'',t:'',kind:'Done',text:textOf(b),sub:'To Do item, ticked on this phone before times were recorded',from:'phone'})});
+ mine.forEach(x=>{const t=new Date(x.at);dated.push({d:dk(t),t:hm(t),kind:x.kind,text:x.text,sub:'Added on this phone',from:'mine',id:x.id})});
+ return {dated,undated}};
+const now=()=>new Date();
+let y,m,sel='';const goToday=()=>{const t=now();y=t.getFullYear();m=t.getMonth()};goToday();
+const g=document.createElement('div');g.className='calgrid';
+g.innerHTML='<div class="cg-head"><p class="cg-title" aria-live="polite"></p><div class="cg-nav"><button type="button" class="cg-btn today">Today</button><button type="button" class="cg-btn arrow prev" aria-label="Previous month">&#8249;</button><button type="button" class="cg-btn arrow next" aria-label="Next month">&#8250;</button></div></div><p class="dn-year"></p><div class="cg-dow">'+DOW.map(d=>'<span>'+d+'</span>').join('')+'</div><div class="cg-cells"></div>';
+const legend=document.createElement('p');legend.className='dn-legend';legend.textContent='Win = achieved, Idea = inspired, Made = created, Done = a To Do item ticked. Tap a day to see it.';
+const form=document.createElement('form');form.className='dn-add';
+form.innerHTML='<select aria-label="Kind"><option>Achieved</option><option>Inspired</option><option>Created</option></select><input aria-label="What happened" placeholder="What happened today" maxlength="240" enterkeyhint="done"><button class="cg-btn" type="submit">Add</button>';
+const hint=document.createElement('p');hint.className='dn-hint';hint.textContent='Adds it to today with the time. Saves on this phone only.';
+const head=document.createElement('div');head.className='dn-listhead';head.innerHTML='<p class="dn-lt"></p><button type="button" class="cg-btn dn-all" hidden>Whole month</button>';
+const list=document.createElement('div');list.className='dn-list';
+const und=document.createElement('div');und.className='dn-undated';
+box.append(g,legend,form,hint,head,list,und);
+const title=g.querySelector('.cg-title'),cells=g.querySelector('.cg-cells'),yr=g.querySelector('.dn-year'),lt=head.querySelector('.dn-lt'),all=head.querySelector('.dn-all');
+const chip=(kind,n)=>{const s=document.createElement('span');s.className='dn-k k-'+kind.toLowerCase();s.innerHTML='<span class="sh"></span><span class="nm"></span>';s.querySelector('.sh').textContent=SHORT[kind]+(n>1?' '+n:'');s.querySelector('.nm').textContent=kind+(n>1?' '+n:'');return s};
+const row=e=>{const it=document.createElement('div');it.className='dn-item';
+ const top=document.createElement('div');top.className='dn-top';const k=chip(e.kind,1);k.textContent=e.kind;top.append(k);
+ const tm=document.createElement('span');tm.className='dn-time';tm.textContent=t12(e.t);if(e.d)top.append(tm);
+ if(e.from==='mine'){const x=document.createElement('button');x.type='button';x.className='dn-x';x.setAttribute('aria-label','Remove');x.textContent='\u00d7';x.onclick=()=>{if(confirm('Remove this entry from this phone?')){mine=mine.filter(z=>z.id!==e.id);wr(EK,mine);render()}};top.append(x)}
+ const w=document.createElement('div');w.className='dn-what';
+ if(e.html)w.innerHTML=e.html;else{const b=document.createElement('b');b.textContent=e.text;const s=document.createElement('small');s.textContent=e.sub;w.append(b,s)}
+ it.append(top,w);return it};
+const order=(a,b)=>a.d!==b.d?(a.d<b.d?1:-1):(a.t||'')<(b.t||'')?1:(a.t||'')>(b.t||'')?-1:0;
+const dayName=k=>{const [a,b,c]=k.split('-').map(Number);const d=new Date(a,b-1,c);return DAYS[d.getDay()]+', '+MON[b-1]+' '+c};
+const render=()=>{
+ const {dated,undated}=collect();
+ const by={};dated.forEach(e=>{(by[e.d]=by[e.d]||[]).push(e)});
+ title.textContent=MON[m]+' '+y;
+ const cnt={Achieved:0,Inspired:0,Created:0,Done:0};dated.forEach(e=>{if(e.d.slice(0,4)===String(y))cnt[e.kind]++});
+ const tot=Object.values(cnt).reduce((a,b)=>a+b,0);
+ yr.textContent=tot?y+': '+cnt.Achieved+' achieved, '+cnt.Inspired+' inspired, '+cnt.Created+' created, '+cnt.Done+' done':'Nothing recorded in '+y+' yet.';
+ const t=now(),tk=dk(t);
+ const first=new Date(y,m,1),start=new Date(y,m,1-first.getDay());
+ const dim=new Date(y,m+1,0).getDate(),weeks=Math.ceil((first.getDay()+dim)/7);
+ cells.replaceChildren();
+ for(let i=0;i<weeks*7;i++){
+  const d=new Date(start.getFullYear(),start.getMonth(),start.getDate()+i);
+  const k=dk(d),es=by[k]||[];
+  const c=document.createElement(es.length?'button':'div');c.className='cg-cell';if(es.length)c.type='button';
+  if(d.getMonth()!==m)c.classList.add('out');if(k===tk)c.classList.add('today');if(k===sel)c.classList.add('sel');
+  const n=document.createElement('span');n.className='cg-num';n.textContent=d.getDate();c.append(n);
+  let label=DAYS[d.getDay()]+', '+MON[d.getMonth()]+' '+d.getDate()+(k===tk?', today':'');
+  if(es.length){KINDS.forEach(kd=>{const q=es.filter(e=>e.kind===kd).length;if(q){c.append(chip(kd,q));label+='. '+q+' '+kd.toLowerCase()}});
+   c.onclick=()=>{if(d.getMonth()!==m){y=d.getFullYear();m=d.getMonth()}sel=sel===k?'':k;render();if(sel)head.scrollIntoView({behavior:'smooth',block:'start'})}}
+  c.setAttribute('aria-label',label);cells.append(c);
+ }
+ list.replaceChildren();
+ const mk=key(y,m,1).slice(0,7);
+ const shown=dated.filter(e=>sel?e.d===sel:e.d.slice(0,7)===mk).sort(order);
+ lt.textContent=sel?dayName(sel):MON[m]+' '+y;all.hidden=!sel;
+ let last='';shown.forEach(e=>{if(!sel&&e.d!==last){const p=document.createElement('p');p.className='dn-day';p.textContent=dayName(e.d);list.append(p);last=e.d}list.append(row(e))});
+ if(!shown.length){const p=document.createElement('p');p.className='dn-empty';p.textContent='Nothing recorded in '+MON[m]+' '+y+' yet.';list.append(p)}
+ und.replaceChildren();
+ if(undated.length){const p=document.createElement('p');p.className='dn-day';p.textContent='Done, date not recorded';und.append(p);undated.forEach(e=>und.append(row(e)))}
+};
+const step=n=>{m+=n;sel='';if(m<0){m=11;y--}if(m>11){m=0;y++}render()};
+g.querySelector('.prev').onclick=()=>step(-1);g.querySelector('.next').onclick=()=>step(1);
+g.querySelector('.today').onclick=()=>{goToday();sel='';render()};
+all.onclick=()=>{sel='';render()};
+form.addEventListener('submit',e=>{e.preventDefault();const inp=form.querySelector('input'),v=inp.value.trim();if(!v)return;
+ mine.push({id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),at:new Date().toISOString(),kind:form.querySelector('select').value,text:v});wr(EK,mine);
+ inp.value='';inp.blur();goToday();sel=dk(now());render()});
+document.addEventListener('change',e=>{const b=e.target;if(!b.matches||!b.matches('ul.check input[data-id]')||b.disabled)return;
+ if(b.checked)log[b.dataset.id]=new Date().toISOString();else delete log[b.dataset.id];wr(LK,log);render()});
+document.querySelectorAll('.reset').forEach(r=>r.addEventListener('click',()=>setTimeout(()=>{sync();render()},0)));
+let sx=0,sy=0;g.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;sy=e.touches[0].clientY},{passive:true});
+g.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;if(Math.abs(dx)>50&&Math.abs(dx)>2*Math.abs(dy))step(dx<0?1:-1)},{passive:true});
+let day=now().toDateString();document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&now().toDateString()!==day){day=now().toDateString();render()}});
+sync();render();
+})();
+</script>
+<script>window.OMNI_BUILD='e575f04b9d';(()=>{const V=window.OMNI_BUILD;let reg=null,busy=false;const check=async()=>{if(busy||!navigator.onLine)return;busy=true;try{if(reg&&reg.waiting)reg.waiting.postMessage('skipWaiting');const r=await fetch('version.json',{cache:'no-store'});if(!r.ok)return;const j=await r.json();if(j.version&&j.version!==V){const k='omni-reloaded-'+j.version;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,'1');await fetch(location.href.split('#')[0],{cache:'reload'}).then(x=>x.text()).catch(()=>{});location.reload();return}}catch(e){}finally{busy=false}};if('serviceWorker' in navigator){addEventListener('load',()=>{navigator.serviceWorker.register('sw.js',{updateViaCache:'none'}).then(r=>{reg=r;check()}).catch(()=>check())})}else{addEventListener('load',check)}document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')check()});addEventListener('pageshow',e=>{if(e.persisted)check()});addEventListener('online',check);})();</script>
 </body>
 </html>
