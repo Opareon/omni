@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Limited print runway</title><style data-sesame-base>
+:root{--ground:#F3F3F3;--card:#FFFFFF;--ink:#141414;--muted:#6E6C68;--rule:#DCDAD5;
+--serif:"William Subhead",Georgia,serif;--sans:"ABC Diatype",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--mono:"ABC Diatype Semi-Mono",ui-monospace,Menlo,monospace}
+@font-face{font-family:"ABC Diatype";src:url(https://www.sesame.com/fonts/diatype/ABCDiatypeVariable.woff2) format("woff2");font-weight:300 700;font-display:swap}
+@font-face{font-family:"William Subhead";src:url(https://www.sesame.com/fonts/william/WilliamSubheadVFRoman.woff2) format("woff2");font-weight:400 700;font-display:swap}
+@font-face{font-family:"ABC Diatype Semi-Mono";src:url(https://www.sesame.com/fonts/diatype/ABCDiatypeSemi-Mono-Regular.woff2) format("woff2");font-weight:400;font-display:swap}
+@media (prefers-color-scheme:dark){:root{--ground:#0F0F0F;--card:#1B1B1B;--ink:#F1F0EE;--muted:#9C9994;--rule:#2C2C2C;color-scheme:dark}}
+*{box-sizing:border-box}img{background:color-mix(in srgb,var(--ground),var(--ink) 6%)}
+body{margin:0;background:var(--ground);color:var(--ink);font:15px/1.5 var(--sans);padding:10px 16px 64px}
+.wrap{max-width:680px;margin:0 auto}
+.masthead{display:flex;align-items:center;justify-content:flex-end;min-height:48px;padding:10px 0}
+h1{font:600 clamp(28px,7vw,32px)/1.05 var(--serif);letter-spacing:-.01em;margin:28px 0 8px}
+h1,h2,h3,p,li{text-wrap:pretty}h2,.lede{text-wrap:balance}
+h2{font:400 26px/1.15 var(--serif);margin:52px 0 14px}
+h3{font:600 17px/1.3 var(--sans);margin:0 0 5px}
+.kicker{font:19px/1.4 var(--sans);color:var(--muted);margin:0 0 2px}h1+.kicker{margin-top:-2px}h2:has(+.kicker){margin-bottom:0}h2+.kicker{margin-bottom:12px}a.route{display:flex;align-items:center;gap:7px;width:fit-content;margin:0 0 22px}a.route::before{content:"";flex:none;width:16px;height:16px;opacity:.6;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23000' stroke-width='1.4' stroke-linejoin='round'%3E%3Cpath d='M1.5 3.5 5.5 2l5 1.5 4-1.5v10.5l-4 1.5-5-1.5-4 1.5z'/%3E%3Cpath d='M5.5 2v10.5M10.5 3.5V14'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23000' stroke-width='1.4' stroke-linejoin='round'%3E%3Cpath d='M1.5 3.5 5.5 2l5 1.5 4-1.5v10.5l-4 1.5-5-1.5-4 1.5z'/%3E%3Cpath d='M5.5 2v10.5M10.5 3.5V14'/%3E%3C/svg%3E") center/contain no-repeat}h2+.kicker:has(+a.route){margin-bottom:2px}h2:has(+.kicker+a.route){margin-top:76px}nav.jump+h2,nav.jump+h2:has(+.kicker+a.route){margin-top:40px}
+.updated{font:14px/1.4 var(--sans);color:var(--muted);margin:6px 0 14px}
+.lede{font:400 clamp(18px,4.4vw,21px)/1.3 var(--sans);margin:22px 0 26px}.lede:has(+ul){margin-bottom:8px}.lede:not(.lede~.lede){padding-top:16px}.lede+ul{font-size:16px}.lede+ul li::marker{color:color-mix(in srgb,var(--ink) 50%,transparent)}
+html{scroll-behavior:smooth}
+p{margin:0 0 10px}
+a{color:inherit;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:2px;text-decoration-color:color-mix(in srgb,currentColor 30%,transparent);transition:text-decoration-color .15s}a:hover{text-decoration-color:currentColor}
+.src{font:11px/1 var(--mono);padding:2px 6px;border:1px solid var(--muted);border-radius:999px;white-space:nowrap;text-decoration:none;margin-left:4px;transition:background-color .15s,color .15s,border-color .15s}@media (hover:hover) and (pointer:fine){.src:hover{background:var(--ink);border-color:var(--ink);color:var(--ground)}}
+.card{background:var(--card);border-radius:20px;padding:14px 16px 18px;margin:10px 0;display:grid;gap:4px}.card+.card{margin-top:16px}.card>ul{margin-top:8px}.card h3{font-size:18px;margin-bottom:0}.card h3+.fact{margin-bottom:8px}
+.card.top{padding-top:0;overflow:hidden}
+.card.top img{display:block;width:calc(100% + 32px);max-width:none;margin:0 -16px 10px;aspect-ratio:16/9;object-fit:cover}
+.card .fact{font-size:15px;color:var(--muted)}
+.card .fact b{color:var(--ink);font-weight:500}
+.card .fact .lab{display:inline-block;min-width:4em;margin-right:6px;font:700 15px/1.5 var(--sans);color:color-mix(in srgb,var(--ink) 50%,var(--muted))}
+.grid{display:grid;gap:10px}
+.btn{display:block;text-align:center;background:var(--ink);color:var(--ground);border-radius:999px;padding:16px 18px;font:500 14px/1 var(--sans);text-decoration:none;margin:8px 0 2px}
+.between{display:flex;align-items:center;gap:10px;font:15px/1.4 var(--sans);color:color-mix(in srgb,var(--ink) 75%,var(--ground));padding:6px 0 6px 16px;margin:10px 0}.between::before{content:"";flex:none;width:22px;height:22px;border-radius:50%;background:color-mix(in srgb,var(--ground),var(--ink) 6%) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23141414' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 2v8M2.5 6.5 6 10l3.5-3.5'/%3E%3C/svg%3E") center/12px no-repeat}@media (prefers-color-scheme:dark){.between::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23F1F0EE' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 2v8M2.5 6.5 6 10l3.5-3.5'/%3E%3C/svg%3E")}}
+.card .time{font:12px/1.4 var(--mono);color:var(--muted);margin:0}
+ol.takeaways{counter-reset:k;list-style:none;padding:0;margin:0 0 30px}
+ol.takeaways>li{counter-increment:k;display:grid;grid-template-columns:30px minmax(0,1fr);padding:16px 0;font-size:16px;line-height:1.5;font-weight:400;color:color-mix(in srgb,var(--muted) 70%,var(--ink))}
+ol.takeaways>li::before{content:counter(k);font:400 21px/1.2 var(--sans);color:var(--ink)}
+ol.takeaways b{display:block;font:600 17px/1.35 var(--sans);color:var(--ink);margin-bottom:3px}
+ol.takeaways small{display:block;grid-column:2;margin-top:4px;font:13px/1.4 var(--sans);color:var(--muted)}
+details.more{padding:16px 0;interpolate-size:allow-keywords}details.more::details-content{block-size:0;overflow:hidden;transition:block-size .25s ease-out,content-visibility .25s allow-discrete}details.more[open]::details-content{block-size:auto}details.more[open]>:not(summary){animation:reveal .25s ease-out}details.more summary{border-radius:4px;transition:background-color .15s,box-shadow .15s}@media (hover:hover) and (pointer:fine){details.more summary:hover{background:color-mix(in srgb,var(--ground),var(--ink) 4%);box-shadow:0 0 0 12px color-mix(in srgb,var(--ground),var(--ink) 4%)}}
+details.more summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) 16px;column-gap:12px}
+details.more summary b{font:600 18px/1.3 var(--sans)}
+details.more summary span{grid-column:1;margin-top:2px;font-size:15px;line-height:1.45;color:var(--muted)}
+details.more summary::-webkit-details-marker{display:none}
+details.more summary::after{content:"";grid-column:2;grid-row:1/span 2;align-self:center;width:7px;height:7px;border-right:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);transform:rotate(45deg);transition:transform .15s}
+details.more[open] summary::after{transform:rotate(-135deg)}
+details.more ul{margin:10px 0 0;padding-left:19px}
+.card h3 a::after{content:"\2197";font-weight:400;font-size:16px;margin-left:3px;color:color-mix(in srgb,var(--muted) 55%,transparent);text-decoration:none;display:inline-block;transform:translateY(2px)}
+.tablewrap{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{text-align:left;white-space:nowrap;font:500 13px/1.4 var(--sans);color:var(--ink);padding:6px 10px 6px 0;border-bottom:1px solid var(--ink)}
+td{min-width:7em;padding:9px 10px 9px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+ul{padding-left:18px;margin:0 0 10px}li{margin:0 0 6px}
+ol.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+ol.steps>li{counter-increment:s;display:grid;grid-template-columns:32px minmax(0,1fr);gap:0 10px;padding:12px 0}
+ol.steps>li::before{content:counter(s);font:400 21px/1.2 var(--sans);color:var(--ink)}
+ol.steps>li>div{border-bottom:1px solid var(--rule);padding-bottom:12px;min-width:0}ol.steps>li:last-child>div{border-bottom:0}
+ol.steps .fact{font-size:16px;font-weight:400;color:var(--muted);margin:2px 0}
+ol.steps .fact b{color:inherit;font-weight:inherit}
+.sources{margin-top:40px;font-size:13px;color:var(--muted)}.sources>b{display:block;font:500 16px/1.4 var(--sans);color:var(--ink);margin:0 0 6px}
+.sources li{margin:0 0 4px}
+body.note main{font-size:16px;line-height:1.6}
+body.note h1{font:400 32px/1.1 var(--serif);margin:24px 0 6px}
+body.note main p{margin:0 0 16px}
+body.note main h2{font:400 24px/1.2 var(--serif);margin:32px 0 8px}
+body.note main h3{font:600 18px/1.3 var(--sans);margin:22px 0 6px}
+body.note main ul,body.note main ol{padding-left:22px;margin:0 0 16px}
+body.note main li{margin:0 0 8px}
+body.note blockquote{margin:16px 0;padding-left:14px;border-left:2px solid var(--rule);color:var(--muted)}
+.group{font:500 16px/1.4 var(--sans);color:var(--ink);margin:26px 0 2px}
+ul.check{list-style:none;padding:0;margin:0}
+ul.check li{display:flex;align-items:center;margin:0}
+ul.check label{flex:1;display:grid;grid-template-columns:24px minmax(0,1fr);gap:2px 12px;align-items:center;padding:13px 0;cursor:pointer;font-size:17px}
+ul.check input{appearance:none;-webkit-appearance:none;margin:0;width:22px;height:22px;border:1.5px solid var(--muted);border-radius:5px;display:grid;place-content:center}
+ul.check input:checked{background:var(--ink);border-color:var(--ink)}
+ul.check input:checked::after{content:"";width:16px;height:16px;animation:check .25s ease-out;background:var(--ground);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.5 6.3 5 8.8l4.5-5.6'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.5 6.3 5 8.8l4.5-5.6'/%3E%3C/svg%3E") center/contain no-repeat}
+ul.check label span{justify-self:start;background:linear-gradient(currentColor,currentColor) no-repeat 0 58%/0 1.5px;transition:background-size .25s ease-out,color .25s}ul.check input:checked+span{background-size:100% 1.5px;color:var(--muted)}@keyframes check{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0)}}@media (prefers-reduced-motion:reduce){ul.check label span{transition:none}ul.check input:checked::after{animation:none}}
+ul.check small{grid-column:2;font:14px/1.3 var(--sans);color:var(--muted)}ul.check small:empty{display:none}
+nav.jump{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:16px 0 26px}nav.jump::before{content:"Jump to:";font:500 14px/1 var(--sans);color:var(--muted);margin-right:2px}
+nav.jump a{display:inline-flex;align-items:center;gap:7px;font:14px/1 var(--sans);text-decoration:none;background:color-mix(in srgb,var(--ground),var(--ink) 6%);border-radius:999px;padding:9px 13px;transition:background-color .15s}@media (hover:hover) and (pointer:fine){nav.jump a:hover{background:color-mix(in srgb,var(--ground),var(--ink) 12%)}}nav.jump a::after{content:"";width:5px;height:5px;border-right:1.5px solid var(--muted);border-bottom:1.5px solid var(--muted);transform:translateY(-2px) rotate(45deg)}
+.options{display:grid;gap:12px;margin:22px 0 28px}
+a.opt{position:relative;display:block;min-height:96px;text-decoration:none;background:var(--card);border-radius:20px;overflow:hidden;padding:12px 34px 12px 106px;color:var(--ink)}
+a.opt img{position:absolute;left:0;top:0;bottom:0;width:92px;height:100%;object-fit:cover}a.opt img.logo{object-fit:contain;padding:22px;background:var(--card)}
+a.opt::after{content:"";position:absolute;right:20px;top:50%;width:6px;height:6px;border-right:1.5px solid var(--muted);border-top:1.5px solid var(--muted);transform:translateY(-50%) rotate(45deg)}
+a.opt b{display:block;font:500 16px/1.25 var(--sans)}a.opt .facts{display:block;font-size:15px;line-height:1.35;margin:3px 0 2px;color:var(--muted)}
+a.opt .plus,a.opt .catch{display:block;font-size:15px;line-height:1.35;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+a.opt .plus{margin-top:7.6px}a.opt .lab{display:inline-block;min-width:2.6em;font:700 15px/1.35 var(--sans);color:color-mix(in srgb,var(--ink) 50%,var(--muted))}
+details.opt{background:var(--card);border-radius:20px;overflow:hidden;interpolate-size:allow-keywords;transition:box-shadow .15s}details.opt::details-content{block-size:0;overflow:hidden;transition:block-size .25s ease-out,content-visibility .25s allow-discrete}details.opt[open]::details-content{block-size:auto}details.opt[open]>:not(summary){animation:reveal .25s ease-out}@keyframes reveal{from{opacity:0;transform:translateY(-6px)}}@media (hover:hover) and (pointer:fine){details.opt:hover{box-shadow:0 2px 12px rgba(0,0,0,.07)}}@media (prefers-reduced-motion:reduce){details.opt::details-content,details.more::details-content{transition:none}details.opt[open]>:not(summary),details.more[open]>:not(summary){animation:none}}
+@supports (corner-shape:squircle){.card,a.opt,details.opt{corner-shape:squircle;border-radius:32px}}
+details.opt summary{position:relative;display:block;list-style:none;min-height:96px;padding:12px 34px 12px 106px;cursor:pointer}details.opt summary::-webkit-details-marker{display:none}
+details.opt summary img{position:absolute;left:0;top:0;bottom:0;width:92px;height:100%;object-fit:cover}
+@media (min-width:600px){a.opt img,details.opt summary img{width:144px}a.opt,details.opt summary{padding-left:158px}}
+details.opt summary::after{content:"";position:absolute;right:21px;top:50%;width:6px;height:6px;border-right:1.5px solid var(--muted);border-bottom:1.5px solid var(--muted);transform:translateY(-70%) rotate(45deg);transition:transform .15s}details.opt[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+details.opt summary b{display:block;font:500 16px/1.25 var(--sans)}details.opt .facts{display:block;font-size:15px;line-height:1.35;margin:3px 0 2px;color:var(--muted)}
+details.opt .plus,details.opt .catch{display:block;font-size:15px;line-height:1.35;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+details.opt .plus{margin-top:7.6px}details.opt .lab{display:inline-block;min-width:2.6em;font:700 15px/1.35 var(--sans);color:color-mix(in srgb,var(--ink) 50%,var(--muted))}
+details.opt[open] .plus,details.opt[open] .catch{white-space:normal;overflow:visible;text-overflow:clip}
+details.opt[open] summary{border-bottom:1px solid var(--rule)}details.opt>ul{margin:0;padding:calc(.8rem + 4px) 14px .8rem 30px;font-size:15px;line-height:1.4}details.opt>ul li{margin:0 0 4px}details.opt>.btn{margin:8px 14px 14px}details.opt>.btns{display:flex;gap:8px;margin:8px 14px 14px}details.opt>.btns .btn{flex:1;margin:0}details.opt>.btns .btn+.btn{background:none;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--ink) 25%,transparent);color:var(--ink)}.book{display:inline-block;margin-left:8px;padding:4px 9px;border-radius:999px;background:var(--ink);color:var(--ground);font:500 12px/1.2 var(--sans);text-decoration:none;vertical-align:1px}
+a.opt.pick{box-shadow:0 0 0 1px var(--ground),0 0 0 2.5px rgba(0,0,0,.25)}@media (prefers-color-scheme:dark){a.opt.pick{box-shadow:0 0 0 1px var(--ground),0 0 0 2.5px rgba(255,255,255,.25)}}
+.options>.group{margin:10px 0 -6px}.options>.group:first-child{margin-top:0}
+.hero{display:block;width:100%;aspect-ratio:5/2;max-height:220px;object-fit:cover;border-radius:20px;margin:18px 0 0}
+.hero+h1,.hero+.credit+h1{margin-top:18px}
+.credit{display:block;font:11px/1.4 var(--mono);color:var(--muted);margin-top:4px}
+.hero+.credit,.card.top>.credit{position:relative;width:fit-content;padding:30px 12px 8px 56px;color:#fff;background:radial-gradient(farthest-corner at 100% 100%,rgba(0,0,0,.5),rgba(0,0,0,.36) 25%,rgba(0,0,0,.2) 45%,rgba(0,0,0,.075) 62%,transparent 75%);text-shadow:0 0 1px rgba(0,0,0,.15);pointer-events:none}
+.hero+.credit{margin:calc(-38px - 1.4em) 0 0 auto;border-bottom-right-radius:20px}@supports (corner-shape:squircle){.hero{corner-shape:squircle;border-radius:32px}.hero+.credit{corner-shape:squircle;border-bottom-right-radius:32px}}
+.card.top>:first-child,.card.top>.credit{grid-row:1;grid-column:1}.card.top>.credit{align-self:end;justify-self:end;margin:0 -16px 10px 0}
+.voice{display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;align-items:center;background:var(--card);border-radius:999px;padding:11px 26px 11px 11px;margin:32px 0}
+.voice .play{width:44px;height:44px;border-radius:50%;border:0;padding:0;background:var(--ink);cursor:pointer;display:grid;place-items:center}
+.voice .play::before{content:"";width:14px;height:16px;background:var(--ground);margin-left:3px;clip-path:path('M1.5 .9Q0 0 0 1.7V14.3Q0 16 1.5 15.1L13 8.9Q14 8 13 7.1Z')}
+.voice.on .play::before{clip-path:none;margin:0;width:13px;height:15px;background:linear-gradient(90deg,var(--ground) 0 4px,transparent 4px 9px,var(--ground) 9px 13px)}
+.voice .vt{display:grid;grid-template-columns:1fr auto;row-gap:9px;font:14px/1 var(--sans)}
+.voice .vt span:first-child{font-size:16px;position:relative;top:-3px}.voice .vt span:nth-child(2){color:var(--muted);font-variant-numeric:tabular-nums}
+.voice .bar{grid-column:1/-1;height:21px;padding:9px 0;margin:-9px 0;background:var(--rule) content-box;position:relative;cursor:pointer;touch-action:none}
+.voice .bar i{position:absolute;left:0;top:9px;height:3px;width:0;background:var(--ink)}.voice .bar i::after{content:"";position:absolute;right:-6px;top:50%;width:12px;height:12px;border-radius:50%;background:var(--ink);transform:translateY(-50%)}
+.voice audio{display:none}
+.copy{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 10px;border:0;border-radius:999px;background:none;color:var(--muted);cursor:pointer}
+.copy.done::after{content:"Copied";font:11px/1 var(--mono)}
+.x{border:0;background:none;color:var(--muted);font-size:18px;padding:0 4px 0 12px;cursor:pointer}
+form.add{position:relative;display:flex;margin:16px 0 0}form.add input{flex:1;min-width:0;font:15px var(--sans);padding:10px 46px 10px 16px;border:1px solid transparent;border-radius:999px;background:var(--card);color:var(--ink);outline:none;transition:border-color .15s}form.add input:focus{border-color:rgba(0,0,0,.25)}@media (prefers-color-scheme:dark){form.add input:focus{border-color:rgba(255,255,255,.25)}}form.add .send{position:absolute;right:5px;top:50%;width:30px;height:30px;margin-top:-15px;padding:0;border:0;border-radius:50%;background:#0A84FF url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 11.5v-9M3 6.5l4-4 4 4'/%3E%3C/svg%3E") center/14px no-repeat;cursor:pointer;transition:opacity .1s ease-out,filter .1s ease-out}form.add input:placeholder-shown+.send{opacity:0;filter:blur(2px);pointer-events:none}.tools{display:flex;gap:8px;margin:10px 0 0}.tbtn{font:14px/1 var(--sans);border:0;background:color-mix(in srgb,var(--ground),var(--ink) 6%);color:var(--ink);border-radius:999px;padding:9px 13px;cursor:pointer;transition:background-color .15s}@media (hover:hover) and (pointer:fine){.tbtn:hover{background:color-mix(in srgb,var(--ground),var(--ink) 12%)}}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..600&display=swap">
+<style>
+:root{--ground:#F1F0EE;--card:#FFFFFF;--ink:#141414;--muted:#6E6C68;--rule:#DCDAD5;
+--serif:"Source Serif 4",Georgia,serif;--sans:"ABC Diatype",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--mono:"ABC Diatype Semi-Mono",ui-monospace,Menlo,monospace}
+@font-face{font-family:"ABC Diatype";src:url(https://www.sesame.com/fonts/diatype/ABCDiatypeVariable.woff2) format("woff2");font-weight:300 700;font-display:swap}
+@font-face{font-family:"ABC Diatype Semi-Mono";src:url(https://www.sesame.com/fonts/diatype/ABCDiatypeSemi-Mono-Regular.woff2) format("woff2");font-weight:400;font-display:swap}
+@media (prefers-color-scheme:dark){:root{--ground:#0F0F0F;--card:#1B1B1B;--ink:#F1F0EE;--muted:#9C9994;--rule:#2C2C2C;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font:15px/1.5 var(--sans);padding:0 16px 64px}
+.wrap{max-width:680px;margin:0 auto}
+.masthead{display:flex;align-items:center;justify-content:space-between;min-height:48px;padding:10px 0;border-bottom:1px solid var(--rule)}
+.masthead::before{content:"";display:block;width:74px;height:12px;background:var(--ink);-webkit-mask:url(https://app.sesame.com/brand/sesame-wordmark.svg) left center/contain no-repeat;mask:url(https://app.sesame.com/brand/sesame-wordmark.svg) left center/contain no-repeat}
+h1{font:400 clamp(34px,8vw,48px)/1.05 var(--serif);letter-spacing:-.01em;margin:28px 0 8px}
+h1,h2,h3,p,li{text-wrap:pretty}
+h2{font:400 26px/1.15 var(--serif);margin:36px 0 10px}
+h3{font:600 17px/1.3 var(--sans);margin:0 0 5px}
+.kicker{font:13px/1.4 var(--sans);color:var(--muted);margin:0 0 2px}
+.updated{font:11px/1.4 var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:6px 0 14px}
+.lede{font:400 21px/1.35 var(--sans);margin:22px 0 26px}
+html{scroll-behavior:smooth}
+p{margin:0 0 10px}
+a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}
+.src{font:11px/1 var(--mono);padding:2px 6px;border:1px solid var(--muted);border-radius:999px;white-space:nowrap;text-decoration:none;margin-left:4px}
+.tablewrap{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{text-align:left;font:500 11px/1.4 var(--mono);letter-spacing:.04em;color:var(--muted);padding:6px 10px 6px 0;border-bottom:1px solid var(--ink)}
+td{padding:9px 10px 9px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+ul{padding-left:18px;margin:0 0 10px}li{margin:0 0 6px}
+body.note main{font-size:16px;line-height:1.6}
+body.note h1{font:400 32px/1.1 var(--serif);margin:24px 0 6px}
+body.note main p{margin:0 0 16px}
+body.note main h2{font:400 24px/1.2 var(--serif);margin:32px 0 8px}
+body.note main h3{font:600 18px/1.3 var(--sans);margin:22px 0 6px}
+body.note main ul,body.note main ol{padding-left:22px;margin:0 0 16px}
+body.note main li{margin:0 0 8px}
+.group{font:14px/1.4 var(--sans);color:var(--muted);margin:26px 0 2px}
+ul.check{list-style:none;padding:0;margin:0}
+ul.check li{display:flex;align-items:center;border-bottom:1px solid var(--rule);margin:0}
+ul.check label{flex:1;display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:12px;align-items:center;padding:13px 0;cursor:pointer;font-size:17px}
+ul.check input{appearance:none;-webkit-appearance:none;margin:0;width:22px;height:22px;border:1.5px solid var(--muted);border-radius:5px;display:grid;place-content:center}
+ul.check input:checked{background:var(--ink);border-color:var(--ink)}
+ul.check input:checked::after{content:"\2715";color:var(--ground);font-size:13px;line-height:1}
+ul.check input:checked+span{text-decoration:line-through;color:var(--muted)}
+ul.check small{font:12px/1 var(--mono);color:var(--muted)}
+.copy{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 10px;border:0;border-radius:999px;background:none;color:var(--muted);cursor:pointer}
+.copy.done::after{content:"Copied";font:11px/1 var(--mono)}
+.x{border:0;background:none;color:var(--muted);font-size:18px;padding:0 4px 0 12px;cursor:pointer}
+form.add{display:flex;gap:8px;margin:16px 0 0}form.add input{flex:1;min-width:0;font:15px var(--sans);padding:10px 16px;border:1px solid var(--rule);border-radius:999px;background:var(--card);color:var(--ink)}
+.tools{display:flex;gap:8px;margin:10px 0 0}
+.tbtn{font:13px/1 var(--sans);border:1px solid var(--rule);background:var(--card);color:var(--ink);border-radius:999px;padding:9px 13px;cursor:pointer}
+</style>
+<meta name="robots" content="noindex, nofollow"></head>
+<body class="note"><div class="wrap"><div id="omni-back" style="margin:0 0 14px"><a href="../" style="display:inline-block;font:600 13px/1 -apple-system,BlinkMacSystemFont,sans-serif;padding:9px 13px;border-radius:999px;border:1px solid currentColor;text-decoration:none;color:inherit">&#8249; Omni map</a></div><script>(()=>{const a=document.querySelector("#omni-back a");const m=location.hash.match(/from=([a-z_0-9]+)/);if(m)a.href="../#n="+m[1];a.addEventListener("click",e=>{e.preventDefault();location.replace(a.href);});})();</script>
+<div class="masthead"><button class="copy" hidden aria-label="Copy"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="5" y="5" width="9" height="9" rx="2"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2h-6A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5"/></svg></button></div>
+<h1>Limited print launch: the 90-day runway</h1>
+<p class="updated">Saved Nov 3, 2026, 11:34am</p>
+<main>
+<p><b>Revised timing:</b> November and December 2026 are for building the components. The ninety-day content dash and its parallel print runway start in January 2027, with the exact January start date still open. Preserve the existing relative milestones, including sales after Day 90.</p>
+
+<p>Run your 13-Sunday content plan as it stands for 90 days. Build Platinum Tsunami as the first limited print beside it, so the reveal lands at the close and sales open right after Day 90.</p>
+
+<p><b>Days are relative.</b> Day 1 is the Sunday the series intro goes up, as in your content plan. The start month is January 2027; no exact start date has been selected or scheduled.</p>
+
+<div class="tablewrap"><table>
+<thead><tr><th>Days</th><th>On screen</th><th>Launch work</th></tr></thead>
+<tbody>
+<tr><td><a href="#before">Before Day 1</a></td><td>Film day 1</td><td>Check Platinum Tsunami files, fix the domain</td></tr>
+<tr><td><a href="#build">1 to 35</a></td><td>Intro, The Covenant, Platinum Tsunami</td><td>Lock the package, get quotes</td></tr>
+<tr><td><a href="#proof">36 to 77</a></td><td>The three Blue Boy pieces</td><td>Proofs, AR decision, film the reveal</td></tr>
+<tr><td><a href="#reveal">78 to 90</a></td><td>Blue Boy together, the close</td><td>Reveal to your list</td></tr>
+<tr><td><a href="#release">91 on</a></td><td>Release</td><td>Sell, then measure</td></tr>
+<tr><td><a href="#after">After</a></td><td>Read the results</td><td>Pick the sculpture next step</td></tr>
+</tbody>
+</table></div>
+
+<p><b>Workload:</b> the content plan doesn't change. The launch adds about one admin block a week, and the only new filming is the reveal shots on film day 3.</p>
+
+<h2 id="before">Before Day 1: set the foundation</h2>
+<ul>
+<li><b>First limited print confirmed: Platinum Tsunami.</b> Build the release package around this painting.</li>
+<li><b>Fix opareon.com without the www.</b> It still shows an old Squarespace page and a security warning. Your pins will send people to your site, so fix this first.</li>
+<li><b>Check your print files.</b> Make sure you have a high-resolution capture of Platinum Tsunami that's good enough for cotton paper.</li>
+<li><b>Film day 1 as planned.</b> The series intro, The Covenant and Platinum Tsunami. Nothing extra here.</li>
+<li><b>Start a simple interest list.</b> Anyone who DMs or comments about owning a piece goes on it. This becomes your release audience.</li>
+</ul>
+
+<h3>Confirmed first print: Platinum Tsunami</h3>
+<p>Platinum Tsunami leads the limited-print release. Its Sunday videos run Days 22 to 35. Print results will inform the sculpture shortlist, not prove sculpture demand.</p>
+
+<h2 id="build">Days 1 to 35: lock the package</h2>
+<p>On screen: the intro, The Covenant (Days 8 to 21) and Platinum Tsunami (Days 22 to 35). No selling yet: soft invitations only, as the content plan says.</p>
+<ul>
+<li><b>Edition size, by Day 35.</b> It decides how many products you build on the site, and whether to sell one number at a time or in rounds.</li>
+<li><b>Price structure, by Day 35.</b> The same price for every number, or rising with each number, as in your app notes (number 1 cheapest). The starting price isn't set.</li>
+<li><b>Edition name, by Day 35.</b> Platinum Edition, Premium Edition, or something else.</li>
+<li><b>Cotton-paper printing and framing quotes, by about Day 21.</b> Who prints, who frames, cost per piece and turnaround. It has to arrive ready to hang.</li>
+<li><b>Metal card quotes, by about Day 21.</b> The electroplated card with NFC or QR. Decide whether to make it or have it made, and check lead times.</li>
+<li><b>Order samples, by Day 35.</b> One proof print, one frame and one card prototype, so they're in hand before film day 3.</li>
+<li><b>Write down where things stand.</b> Every two weeks, note DMs, shares, saves and Pinterest clicks, as in the content plan. This is your before-release baseline.</li>
+</ul>
+
+<h2 id="proof">Days 36 to 77: prove the package</h2>
+<p>On screen, in order: Blue Boy Holding Space, Blue Boy Rose Tinted Glasses and Seen (the fifth painting, spelled S-E-E-N). Film day 2 falls around Days 28 to 33, and film day 3 around Days 58 to 62.</p>
+<ul>
+<li><b>Let the collector clip show the making.</b> The collector-experience clip already on Day 13 of each block can show the proof print, the frame or the card. Show it, don't explain it.</li>
+<li><b>Approve the proof, by about Day 50.</b> Check the color, paper, frame and card together, as the collector will get them.</li>
+<li><b>Decide on AR, by about Day 56.</b> The app isn't built yet. Decide whether AR is in this first release. Your reveal can only show what really comes in the box.</li>
+<li><b>Film the reveal on film day 3.</b> The framed work, the card and AR (if it's ready), all together, at your uncle's home. This is your "show, don't tell" announcement.</li>
+<li><b>Plan how it ships, by about Day 70.</b> Packing a framed piece, the edition number on the card and certificate, and what the box looks like when it's opened.</li>
+<li><b>Build the product page out of sight, by Day 77.</b> Limited editions go in your Originals, Limited Editions and Standard Products store, not the print store. Test the one-number-at-a-time code there before anyone sees it.</li>
+</ul>
+
+<h3>If AR isn't ready</h3>
+<ul>
+<li><b>Release without AR:</b> the print, frame and card ship now, and you leave AR out of the reveal.</li>
+<li><b>Card links to your site for now:</b> the NFC or QR opens the piece's page until the app exists.</li>
+<li><b>Hold the release:</b> slide everything until AR works. The days are relative, so nothing breaks.</li>
+</ul>
+
+<h2 id="reveal">Days 78 to 90: the reveal</h2>
+<p>On screen: the three Blue Boy pieces together (Days 78 to 84), then the closing film (Day 85).</p>
+<ul>
+<li><b>Grow the list.</b> The content plan already invites people to "join my list to hear first when the Blue Boy works are shown." Point the same invitation at the limited edition.</li>
+<li><b>Reveal around Day 85.</b> Cut the reveal footage into the closing film, or post it as its own clip that week. Make it clear everything shown is included.</li>
+<li><b>Tell your list first.</b> Give them the release day and how it works before you post it publicly.</li>
+<li><b>Final check.</b> Go through the readiness list below. If anything's missing, slide the release, not the content.</li>
+</ul>
+
+<h2 id="release">Day 91 on: release and measure</h2>
+<ul>
+<li><b>Open sales.</b> One number at a time on opareon.com, if you choose the method that already works on your site. Bidding through the app is for later.</li>
+<li><b>Keep the Sundays going.</b> Behind-the-scenes of packing and shipping, with buyers' permission, keeps the momentum going.</li>
+<li><b>Thank every buyer personally.</b> Ask where they first saw the piece. That one question tells you which content sells.</li>
+</ul>
+
+<h3>What to track for about four weeks</h3>
+<ul>
+<li><b>Sell-through:</b> how many numbers sold, and how fast.</li>
+<li><b>Price response:</b> whether sales slowed as the numbers rose, if prices rise.</li>
+<li><b>Source:</b> which painting, video or platform each buyer came from.</li>
+<li><b>List to buyer:</b> how many people on your list bought.</li>
+<li><b>The package:</b> whether people used the card and AR, and whether anything arrived damaged.</li>
+</ul>
+
+<h2 id="after">After: sculptures wait for the results</h2>
+<p>Strong print sales say people want that image. They don't prove anyone will pay sculpture prices.</p>
+<ul>
+<li><b>Use the results to shortlist.</b> Platinum Tsunami is already your first sculpture. The results can confirm it or point to a Blue Boy sculpture instead.</li>
+<li><b>Test sculpture demand on its own.</b> Show a prototype from your own clay and plating tests, then measure interest in the sculpture itself before you make a run of ten.</li>
+<li><b>Auction access stays open.</b> App-only, invite-only and tiered are still options, not rules.</li>
+</ul>
+
+<h2 id="ready">Release readiness</h2>
+<p class="group">The package</p>
+<ul class="check">
+<li><label><input type="checkbox"><span>Proof approved on cotton paper</span><small>Day 50</small></label></li>
+<li><label><input type="checkbox"><span>Framing source and sample approved</span><small>Day 50</small></label></li>
+<li><label><input type="checkbox"><span>Metal card made, NFC or QR tested</span><small>Day 56</small></label></li>
+<li><label><input type="checkbox"><span>AR decision made</span><small>Day 56</small></label></li>
+<li><label><input type="checkbox"><span>Packing and shipping plan</span><small>Day 70</small></label></li>
+</ul>
+<p class="group">The site</p>
+<ul class="check">
+<li><label><input type="checkbox"><span>Bare domain fixed</span><small>Before Day 1</small></label></li>
+<li><label><input type="checkbox"><span>Edition size, name and prices set</span><small>Day 35</small></label></li>
+<li><label><input type="checkbox"><span>Product page built and hidden</span><small>Day 77</small></label></li>
+<li><label><input type="checkbox"><span>Next-number code tested</span><small>Day 77</small></label></li>
+</ul>
+<p class="group">The audience</p>
+<ul class="check">
+<li><label><input type="checkbox"><span>Interest list started</span><small>Before Day 1</small></label></li>
+<li><label><input type="checkbox"><span>Reveal filmed</span><small>Film day 3</small></label></li>
+<li><label><input type="checkbox"><span>List told the release day</span><small>Day 85</small></label></li>
+</ul>
+
+<h2 id="settled">Already settled</h2>
+<ul>
+<li><b>First limited print:</b> Platinum Tsunami, confirmed by Kobe.</li>
+<li><b>Order:</b> momentum first, limited prints first, sculptures after the results.</li>
+<li><b>Content plan:</b> one Sunday video, clips cut from it, four pillars, uncle's home for long filming only, 13 Sundays from 7 recordings.</li>
+<li><b>The package:</b> a cotton-paper print, framed and ready to hang, an electroplated metal card, and AR through the app.</li>
+<li><b>The message:</b> "a receipt for the owner's taste," announced with a visual reveal, not a list of specs.</li>
+<li><b>Sculptures:</b> runs of ten, with Platinum Tsunami first. The clay and plating recipe still needs testing.</li>
+</ul>
+
+<h2 id="open">Still open</h2>
+<ul>
+<li><b>Day 1 itself:</b> which Sunday in January 2027 the runway starts.</li>
+<li><b>Edition size, name, prices:</b> by Day 35.</li>
+<li><b>Print, frame and card sources:</b> by about Day 21.</li>
+<li><b>Whether AR makes the first release:</b> by about Day 56.</li>
+<li><b>Holding Space title:</b> "Holding Space" remains a guessed transcription. Seen is confirmed as the fifth painting, not Scene.</li>
+<li><b>Spelling:</b> your site and app notes say Opareon; the vision notes say Oparion.</li>
+</ul>
+
+<h2 id="log">Project log</h2>
+<ul>
+<li><b>Oct 9, 2026:</b> runway drafted from your content plan, vision notes, app notes and website review. Nothing launched, ordered, posted or changed on the site.</li>
+<li><b>Decision confirmed:</b> Kobe selected Platinum Tsunami as the first limited print. Removed the first-print choice from the open decisions.</li>
+<li><b>Next preparation:</b> check the Platinum Tsunami print file and obtain printing, framing and card quotes. Edition size, pricing, start date and AR readiness remain open. Nothing is live.</li>
+</ul>
+
+</main>
+</div>
+<script>document.querySelectorAll('.copy').forEach(b=>{b.hidden=false;b.onclick=()=>navigator.clipboard.writeText(document.querySelector('main').innerText).then(()=>{b.classList.add('done');setTimeout(()=>b.classList.remove('done'),1500)})})</script>
+<script>(()=>{const K='sesame-list:'+location.pathname+':'+document.title,L=[...document.querySelectorAll('ul.check')];if(!L.length)return;const row=(t,q,c)=>{const li=document.createElement('li');li.innerHTML='<label><input type="checkbox"><span></span><small></small></label><button class="x" aria-label="Remove">×</button>';li.querySelector('span').textContent=t;li.querySelector('small').textContent=q||'';li.querySelector('input').checked=!!c;return li};const read=u=>[...u.children].map(li=>[li.querySelector('span').textContent,(li.querySelector('small')||{}).textContent||'',li.querySelector('input').checked]);const save=()=>{try{localStorage.setItem(K,JSON.stringify(L.map(read)))}catch(e){}};let s=null;try{s=JSON.parse(localStorage.getItem(K))}catch(e){}L.forEach((u,i)=>{const it=s&&s[i]?s[i]:read(u);u.replaceChildren(...it.map(a=>row(...a)))});const last=L[L.length-1],f=document.createElement('form');f.className='add';f.innerHTML='<input placeholder="Add an item"><button class="tbtn">Add</button>';last.after(f);const t=document.createElement('div');t.className='tools';t.innerHTML='<button type="button" class="tbtn">Reset</button>';f.after(t);document.addEventListener('change',e=>{if(e.target.closest('ul.check'))save()});document.addEventListener('click',e=>{const x=e.target.closest('ul.check .x');if(x){x.parentElement.remove();save()}});f.addEventListener('submit',e=>{e.preventDefault();const v=f.querySelector('input').value.trim();if(v){last.append(row(v,'',false));f.querySelector('input').value='';save()}});t.firstChild.addEventListener('click',()=>{L.forEach(u=>u.querySelectorAll('input').forEach(c=>c.checked=false));save()})})()</script>
+</body></html>

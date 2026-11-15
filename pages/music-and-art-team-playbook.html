@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Team playbook</title><style data-sesame-base>
+:root{--ground:#F3F3F3;--card:#FFFFFF;--ink:#141414;--muted:#6E6C68;--rule:#DCDAD5;
+--serif:"William Subhead",Georgia,serif;--sans:"ABC Diatype",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--mono:"ABC Diatype Semi-Mono",ui-monospace,Menlo,monospace}
+@font-face{font-family:"ABC Diatype";src:url(https://www.sesame.com/fonts/diatype/ABCDiatypeVariable.woff2) format("woff2");font-weight:300 700;font-display:swap}
+@font-face{font-family:"William Subhead";src:url(https://www.sesame.com/fonts/william/WilliamSubheadVFRoman.woff2) format("woff2");font-weight:400 700;font-display:swap}
+@font-face{font-family:"ABC Diatype Semi-Mono";src:url(https://www.sesame.com/fonts/diatype/ABCDiatypeSemi-Mono-Regular.woff2) format("woff2");font-weight:400;font-display:swap}
+@media (prefers-color-scheme:dark){:root{--ground:#0F0F0F;--card:#1B1B1B;--ink:#F1F0EE;--muted:#9C9994;--rule:#2C2C2C;color-scheme:dark}}
+*{box-sizing:border-box}img{background:color-mix(in srgb,var(--ground),var(--ink) 6%)}
+body{margin:0;background:var(--ground);color:var(--ink);font:15px/1.5 var(--sans);padding:10px 16px 64px}
+.wrap{max-width:680px;margin:0 auto}
+.masthead{display:flex;align-items:center;justify-content:flex-end;min-height:48px;padding:10px 0}
+h1{font:600 clamp(28px,7vw,32px)/1.05 var(--serif);letter-spacing:-.01em;margin:28px 0 8px}
+h1,h2,h3,p,li{text-wrap:pretty}h2,.lede{text-wrap:balance}
+h2{font:400 26px/1.15 var(--serif);margin:52px 0 14px}
+h3{font:600 17px/1.3 var(--sans);margin:0 0 5px}
+.kicker{font:19px/1.4 var(--sans);color:var(--muted);margin:0 0 2px}h1+.kicker{margin-top:-2px}h2:has(+.kicker){margin-bottom:0}h2+.kicker{margin-bottom:12px}a.route{display:flex;align-items:center;gap:7px;width:fit-content;margin:0 0 22px}a.route::before{content:"";flex:none;width:16px;height:16px;opacity:.6;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23000' stroke-width='1.4' stroke-linejoin='round'%3E%3Cpath d='M1.5 3.5 5.5 2l5 1.5 4-1.5v10.5l-4 1.5-5-1.5-4 1.5z'/%3E%3Cpath d='M5.5 2v10.5M10.5 3.5V14'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23000' stroke-width='1.4' stroke-linejoin='round'%3E%3Cpath d='M1.5 3.5 5.5 2l5 1.5 4-1.5v10.5l-4 1.5-5-1.5-4 1.5z'/%3E%3Cpath d='M5.5 2v10.5M10.5 3.5V14'/%3E%3C/svg%3E") center/contain no-repeat}h2+.kicker:has(+a.route){margin-bottom:2px}h2:has(+.kicker+a.route){margin-top:76px}nav.jump+h2,nav.jump+h2:has(+.kicker+a.route){margin-top:40px}
+.updated{font:14px/1.4 var(--sans);color:var(--muted);margin:6px 0 14px}
+.lede{font:400 clamp(18px,4.4vw,21px)/1.3 var(--sans);margin:22px 0 26px}.lede:has(+ul){margin-bottom:8px}.lede:not(.lede~.lede){padding-top:16px}.lede+ul{font-size:16px}.lede+ul li::marker{color:color-mix(in srgb,var(--ink) 50%,transparent)}
+html{scroll-behavior:smooth}
+p{margin:0 0 10px}
+a{color:inherit;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:2px;text-decoration-color:color-mix(in srgb,currentColor 30%,transparent);transition:text-decoration-color .15s}a:hover{text-decoration-color:currentColor}
+.src{font:11px/1 var(--mono);padding:2px 6px;border:1px solid var(--muted);border-radius:999px;white-space:nowrap;text-decoration:none;margin-left:4px;transition:background-color .15s,color .15s,border-color .15s}@media (hover:hover) and (pointer:fine){.src:hover{background:var(--ink);border-color:var(--ink);color:var(--ground)}}
+.card{background:var(--card);border-radius:20px;padding:14px 16px 18px;margin:10px 0;display:grid;gap:4px}.card+.card{margin-top:16px}.card>ul{margin-top:8px}.card h3{font-size:18px;margin-bottom:0}.card h3+.fact{margin-bottom:8px}
+.card.top{padding-top:0;overflow:hidden}
+.card.top img{display:block;width:calc(100% + 32px);max-width:none;margin:0 -16px 10px;aspect-ratio:16/9;object-fit:cover}
+.card .fact{font-size:15px;color:var(--muted)}
+.card .fact b{color:var(--ink);font-weight:500}
+.card .fact .lab{display:inline-block;min-width:4em;margin-right:6px;font:700 15px/1.5 var(--sans);color:color-mix(in srgb,var(--ink) 50%,var(--muted))}
+.grid{display:grid;gap:10px}
+.btn{display:block;text-align:center;background:var(--ink);color:var(--ground);border-radius:999px;padding:16px 18px;font:500 14px/1 var(--sans);text-decoration:none;margin:8px 0 2px}
+.between{display:flex;align-items:center;gap:10px;font:15px/1.4 var(--sans);color:color-mix(in srgb,var(--ink) 75%,var(--ground));padding:6px 0 6px 16px;margin:10px 0}.between::before{content:"";flex:none;width:22px;height:22px;border-radius:50%;background:color-mix(in srgb,var(--ground),var(--ink) 6%) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23141414' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 2v8M2.5 6.5 6 10l3.5-3.5'/%3E%3C/svg%3E") center/12px no-repeat}@media (prefers-color-scheme:dark){.between::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23F1F0EE' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 2v8M2.5 6.5 6 10l3.5-3.5'/%3E%3C/svg%3E")}}
+.card .time{font:12px/1.4 var(--mono);color:var(--muted);margin:0}
+ol.takeaways{counter-reset:k;list-style:none;padding:0;margin:0 0 30px}
+ol.takeaways>li{counter-increment:k;display:grid;grid-template-columns:30px minmax(0,1fr);padding:16px 0;font-size:16px;line-height:1.5;font-weight:400;color:color-mix(in srgb,var(--muted) 70%,var(--ink))}
+ol.takeaways>li::before{content:counter(k);font:400 21px/1.2 var(--sans);color:var(--ink)}
+ol.takeaways b{display:block;font:600 17px/1.35 var(--sans);color:var(--ink);margin-bottom:3px}
+ol.takeaways small{display:block;grid-column:2;margin-top:4px;font:13px/1.4 var(--sans);color:var(--muted)}
+details.more{padding:16px 0;interpolate-size:allow-keywords}details.more::details-content{block-size:0;overflow:hidden;transition:block-size .25s ease-out,content-visibility .25s allow-discrete}details.more[open]::details-content{block-size:auto}details.more[open]>:not(summary){animation:reveal .25s ease-out}details.more summary{border-radius:4px;transition:background-color .15s,box-shadow .15s}@media (hover:hover) and (pointer:fine){details.more summary:hover{background:color-mix(in srgb,var(--ground),var(--ink) 4%);box-shadow:0 0 0 12px color-mix(in srgb,var(--ground),var(--ink) 4%)}}
+details.more summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) 16px;column-gap:12px}
+details.more summary b{font:600 18px/1.3 var(--sans)}
+details.more summary span{grid-column:1;margin-top:2px;font-size:15px;line-height:1.45;color:var(--muted)}
+details.more summary::-webkit-details-marker{display:none}
+details.more summary::after{content:"";grid-column:2;grid-row:1/span 2;align-self:center;width:7px;height:7px;border-right:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);transform:rotate(45deg);transition:transform .15s}
+details.more[open] summary::after{transform:rotate(-135deg)}
+details.more ul{margin:10px 0 0;padding-left:19px}
+.card h3 a::after{content:"\2197";font-weight:400;font-size:16px;margin-left:3px;color:color-mix(in srgb,var(--muted) 55%,transparent);text-decoration:none;display:inline-block;transform:translateY(2px)}
+.tablewrap{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{text-align:left;white-space:nowrap;font:500 13px/1.4 var(--sans);color:var(--ink);padding:6px 10px 6px 0;border-bottom:1px solid var(--ink)}
+td{min-width:7em;padding:9px 10px 9px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+ul{padding-left:18px;margin:0 0 10px}li{margin:0 0 6px}
+ol.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+ol.steps>li{counter-increment:s;display:grid;grid-template-columns:32px minmax(0,1fr);gap:0 10px;padding:12px 0}
+ol.steps>li::before{content:counter(s);font:400 21px/1.2 var(--sans);color:var(--ink)}
+ol.steps>li>div{border-bottom:1px solid var(--rule);padding-bottom:12px;min-width:0}ol.steps>li:last-child>div{border-bottom:0}
+ol.steps .fact{font-size:16px;font-weight:400;color:var(--muted);margin:2px 0}
+ol.steps .fact b{color:inherit;font-weight:inherit}
+.sources{margin-top:40px;font-size:13px;color:var(--muted)}.sources>b{display:block;font:500 16px/1.4 var(--sans);color:var(--ink);margin:0 0 6px}
+.sources li{margin:0 0 4px}
+body.note main{font-size:16px;line-height:1.6}
+body.note h1{font:400 32px/1.1 var(--serif);margin:24px 0 6px}
+body.note main p{margin:0 0 16px}
+body.note main h2{font:400 24px/1.2 var(--serif);margin:32px 0 8px}
+body.note main h3{font:600 18px/1.3 var(--sans);margin:22px 0 6px}
+body.note main ul,body.note main ol{padding-left:22px;margin:0 0 16px}
+body.note main li{margin:0 0 8px}
+body.note blockquote{margin:16px 0;padding-left:14px;border-left:2px solid var(--rule);color:var(--muted)}
+.group{font:500 16px/1.4 var(--sans);color:var(--ink);margin:26px 0 2px}
+ul.check{list-style:none;padding:0;margin:0}
+ul.check li{display:flex;align-items:center;margin:0}
+ul.check label{flex:1;display:grid;grid-template-columns:24px minmax(0,1fr);gap:2px 12px;align-items:center;padding:13px 0;cursor:pointer;font-size:17px}
+ul.check input{appearance:none;-webkit-appearance:none;margin:0;width:22px;height:22px;border:1.5px solid var(--muted);border-radius:5px;display:grid;place-content:center}
+ul.check input:checked{background:var(--ink);border-color:var(--ink)}
+ul.check input:checked::after{content:"";width:16px;height:16px;animation:check .25s ease-out;background:var(--ground);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.5 6.3 5 8.8l4.5-5.6'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.5 6.3 5 8.8l4.5-5.6'/%3E%3C/svg%3E") center/contain no-repeat}
+ul.check label span{justify-self:start;background:linear-gradient(currentColor,currentColor) no-repeat 0 58%/0 1.5px;transition:background-size .25s ease-out,color .25s}ul.check input:checked+span{background-size:100% 1.5px;color:var(--muted)}@keyframes check{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0)}}@media (prefers-reduced-motion:reduce){ul.check label span{transition:none}ul.check input:checked::after{animation:none}}
+ul.check small{grid-column:2;font:14px/1.3 var(--sans);color:var(--muted)}ul.check small:empty{display:none}
+nav.jump{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:16px 0 26px}nav.jump::before{content:"Jump to:";font:500 14px/1 var(--sans);color:var(--muted);margin-right:2px}
+nav.jump a{display:inline-flex;align-items:center;gap:7px;font:14px/1 var(--sans);text-decoration:none;background:color-mix(in srgb,var(--ground),var(--ink) 6%);border-radius:999px;padding:9px 13px;transition:background-color .15s}@media (hover:hover) and (pointer:fine){nav.jump a:hover{background:color-mix(in srgb,var(--ground),var(--ink) 12%)}}nav.jump a::after{content:"";width:5px;height:5px;border-right:1.5px solid var(--muted);border-bottom:1.5px solid var(--muted);transform:translateY(-2px) rotate(45deg)}
+.options{display:grid;gap:12px;margin:22px 0 28px}
+a.opt{position:relative;display:block;min-height:96px;text-decoration:none;background:var(--card);border-radius:20px;overflow:hidden;padding:12px 34px 12px 106px;color:var(--ink)}
+a.opt img{position:absolute;left:0;top:0;bottom:0;width:92px;height:100%;object-fit:cover}a.opt img.logo{object-fit:contain;padding:22px;background:var(--card)}
+a.opt::after{content:"";position:absolute;right:20px;top:50%;width:6px;height:6px;border-right:1.5px solid var(--muted);border-top:1.5px solid var(--muted);transform:translateY(-50%) rotate(45deg)}
+a.opt b{display:block;font:500 16px/1.25 var(--sans)}a.opt .facts{display:block;font-size:15px;line-height:1.35;margin:3px 0 2px;color:var(--muted)}
+a.opt .plus,a.opt .catch{display:block;font-size:15px;line-height:1.35;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+a.opt .plus{margin-top:7.6px}a.opt .lab{display:inline-block;min-width:2.6em;font:700 15px/1.35 var(--sans);color:color-mix(in srgb,var(--ink) 50%,var(--muted))}
+details.opt{background:var(--card);border-radius:20px;overflow:hidden;interpolate-size:allow-keywords;transition:box-shadow .15s}details.opt::details-content{block-size:0;overflow:hidden;transition:block-size .25s ease-out,content-visibility .25s allow-discrete}details.opt[open]::details-content{block-size:auto}details.opt[open]>:not(summary){animation:reveal .25s ease-out}@keyframes reveal{from{opacity:0;transform:translateY(-6px)}}@media (hover:hover) and (pointer:fine){details.opt:hover{box-shadow:0 2px 12px rgba(0,0,0,.07)}}@media (prefers-reduced-motion:reduce){details.opt::details-content,details.more::details-content{transition:none}details.opt[open]>:not(summary),details.more[open]>:not(summary){animation:none}}
+@supports (corner-shape:squircle){.card,a.opt,details.opt{corner-shape:squircle;border-radius:32px}}
+details.opt summary{position:relative;display:block;list-style:none;min-height:96px;padding:12px 34px 12px 106px;cursor:pointer}details.opt summary::-webkit-details-marker{display:none}
+details.opt summary img{position:absolute;left:0;top:0;bottom:0;width:92px;height:100%;object-fit:cover}
+@media (min-width:600px){a.opt img,details.opt summary img{width:144px}a.opt,details.opt summary{padding-left:158px}}
+details.opt summary::after{content:"";position:absolute;right:21px;top:50%;width:6px;height:6px;border-right:1.5px solid var(--muted);border-bottom:1.5px solid var(--muted);transform:translateY(-70%) rotate(45deg);transition:transform .15s}details.opt[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+details.opt summary b{display:block;font:500 16px/1.25 var(--sans)}details.opt .facts{display:block;font-size:15px;line-height:1.35;margin:3px 0 2px;color:var(--muted)}
+details.opt .plus,details.opt .catch{display:block;font-size:15px;line-height:1.35;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+details.opt .plus{margin-top:7.6px}details.opt .lab{display:inline-block;min-width:2.6em;font:700 15px/1.35 var(--sans);color:color-mix(in srgb,var(--ink) 50%,var(--muted))}
+details.opt[open] .plus,details.opt[open] .catch{white-space:normal;overflow:visible;text-overflow:clip}
+details.opt[open] summary{border-bottom:1px solid var(--rule)}details.opt>ul{margin:0;padding:calc(.8rem + 4px) 14px .8rem 30px;font-size:15px;line-height:1.4}details.opt>ul li{margin:0 0 4px}details.opt>.btn{margin:8px 14px 14px}details.opt>.btns{display:flex;gap:8px;margin:8px 14px 14px}details.opt>.btns .btn{flex:1;margin:0}details.opt>.btns .btn+.btn{background:none;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--ink) 25%,transparent);color:var(--ink)}.book{display:inline-block;margin-left:8px;padding:4px 9px;border-radius:999px;background:var(--ink);color:var(--ground);font:500 12px/1.2 var(--sans);text-decoration:none;vertical-align:1px}
+a.opt.pick{box-shadow:0 0 0 1px var(--ground),0 0 0 2.5px rgba(0,0,0,.25)}@media (prefers-color-scheme:dark){a.opt.pick{box-shadow:0 0 0 1px var(--ground),0 0 0 2.5px rgba(255,255,255,.25)}}
+.options>.group{margin:10px 0 -6px}.options>.group:first-child{margin-top:0}
+.hero{display:block;width:100%;aspect-ratio:5/2;max-height:220px;object-fit:cover;border-radius:20px;margin:18px 0 0}
+.hero+h1,.hero+.credit+h1{margin-top:18px}
+.credit{display:block;font:11px/1.4 var(--mono);color:var(--muted);margin-top:4px}
+.hero+.credit,.card.top>.credit{position:relative;width:fit-content;padding:30px 12px 8px 56px;color:#fff;background:radial-gradient(farthest-corner at 100% 100%,rgba(0,0,0,.5),rgba(0,0,0,.36) 25%,rgba(0,0,0,.2) 45%,rgba(0,0,0,.075) 62%,transparent 75%);text-shadow:0 0 1px rgba(0,0,0,.15);pointer-events:none}
+.hero+.credit{margin:calc(-38px - 1.4em) 0 0 auto;border-bottom-right-radius:20px}@supports (corner-shape:squircle){.hero{corner-shape:squircle;border-radius:32px}.hero+.credit{corner-shape:squircle;border-bottom-right-radius:32px}}
+.card.top>:first-child,.card.top>.credit{grid-row:1;grid-column:1}.card.top>.credit{align-self:end;justify-self:end;margin:0 -16px 10px 0}
+.voice{display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;align-items:center;background:var(--card);border-radius:999px;padding:11px 26px 11px 11px;margin:32px 0}
+.voice .play{width:44px;height:44px;border-radius:50%;border:0;padding:0;background:var(--ink);cursor:pointer;display:grid;place-items:center}
+.voice .play::before{content:"";width:14px;height:16px;background:var(--ground);margin-left:3px;clip-path:path('M1.5 .9Q0 0 0 1.7V14.3Q0 16 1.5 15.1L13 8.9Q14 8 13 7.1Z')}
+.voice.on .play::before{clip-path:none;margin:0;width:13px;height:15px;background:linear-gradient(90deg,var(--ground) 0 4px,transparent 4px 9px,var(--ground) 9px 13px)}
+.voice .vt{display:grid;grid-template-columns:1fr auto;row-gap:9px;font:14px/1 var(--sans)}
+.voice .vt span:first-child{font-size:16px;position:relative;top:-3px}.voice .vt span:nth-child(2){color:var(--muted);font-variant-numeric:tabular-nums}
+.voice .bar{grid-column:1/-1;height:21px;padding:9px 0;margin:-9px 0;background:var(--rule) content-box;position:relative;cursor:pointer;touch-action:none}
+.voice .bar i{position:absolute;left:0;top:9px;height:3px;width:0;background:var(--ink)}.voice .bar i::after{content:"";position:absolute;right:-6px;top:50%;width:12px;height:12px;border-radius:50%;background:var(--ink);transform:translateY(-50%)}
+.voice audio{display:none}
+.copy{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 10px;border:0;border-radius:999px;background:none;color:var(--muted);cursor:pointer}
+.copy.done::after{content:"Copied";font:11px/1 var(--mono)}
+.x{border:0;background:none;color:var(--muted);font-size:18px;padding:0 4px 0 12px;cursor:pointer}
+form.add{position:relative;display:flex;margin:16px 0 0}form.add input{flex:1;min-width:0;font:15px var(--sans);padding:10px 46px 10px 16px;border:1px solid transparent;border-radius:999px;background:var(--card);color:var(--ink);outline:none;transition:border-color .15s}form.add input:focus{border-color:rgba(0,0,0,.25)}@media (prefers-color-scheme:dark){form.add input:focus{border-color:rgba(255,255,255,.25)}}form.add .send{position:absolute;right:5px;top:50%;width:30px;height:30px;margin-top:-15px;padding:0;border:0;border-radius:50%;background:#0A84FF url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 11.5v-9M3 6.5l4-4 4 4'/%3E%3C/svg%3E") center/14px no-repeat;cursor:pointer;transition:opacity .1s ease-out,filter .1s ease-out}form.add input:placeholder-shown+.send{opacity:0;filter:blur(2px);pointer-events:none}.tools{display:flex;gap:8px;margin:10px 0 0}.tbtn{font:14px/1 var(--sans);border:0;background:color-mix(in srgb,var(--ground),var(--ink) 6%);color:var(--ink);border-radius:999px;padding:9px 13px;cursor:pointer;transition:background-color .15s}@media (hover:hover) and (pointer:fine){.tbtn:hover{background:color-mix(in srgb,var(--ground),var(--ink) 12%)}}
+</style>
+<meta name="robots" content="noindex, nofollow"></head>
+<body class="note"><div class="wrap"><div id="omni-back" style="margin:0 0 14px"><a href="../" style="display:inline-block;font:600 13px/1 -apple-system,BlinkMacSystemFont,sans-serif;padding:9px 13px;border-radius:999px;border:1px solid currentColor;text-decoration:none;color:inherit">&#8249; Omni map</a></div><script>(()=>{const a=document.querySelector("#omni-back a");const m=location.hash.match(/from=([a-z_0-9]+)/);if(m)a.href="../#n="+m[1];a.addEventListener("click",e=>{e.preventDefault();location.replace(a.href);});})();</script>
+<div class="masthead"><button class="copy" hidden aria-label="Copy"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="5" y="5" width="9" height="9" rx="2"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2h-6A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5"/></svg></button></div>
+<h1>Your music and art playbook: building the team behind the work</h1>
+<p class="updated">Saved Nov 14, 2026, 1:26am</p>
+<main>
+<p class="lede">You don't need a full team yet. Build it in rings: a kit that makes saying yes easy, small paid pilots that prove who follows through, then a stake only for the people who earned it.</p>
+<p>Phases and dates below are suggestions, not commitments. Art and music run as separate lanes; they share only the Opareon story and the back office.</p>
+
+<nav class="jump"><a href="#rings">Rings</a><a href="#kit">Kit</a><a href="#art">Art</a><a href="#music">Music</a><a href="#roles">Roles</a><a href="#terms">Terms</a><a href="#money">Money</a><a href="#scripts">Scripts</a><a href="#rhythm">Rhythm</a></nav>
+
+<div class="tablewrap"><table>
+<thead><tr><th>Phase</th><th>Focus</th><th>Suggested timing</th></tr></thead>
+<tbody>
+<tr><td><a href="#kit">1. The kit</a></td><td>Assets before asks, one per lane</td><td>Now through winter break</td></tr>
+<tr><td><a href="#art">2. Art lane</a></td><td>Articulate ATL, then the road to a solo show</td><td>Nov 2026 to 2027</td></tr>
+<tr><td><a href="#music">3. Music lane</a></td><td>Starboy: rights, mix pilot, release</td><td>Winter into spring</td></tr>
+<tr><td><a href="#roles">4. First people</a></td><td>Paid pilots, then stakes</td><td>One pilot at a time</td></tr>
+<tr><td><a href="#money">5. Money routes</a></td><td>Grants, residencies, sponsorship</td><td>Applications on school breaks</td></tr>
+<tr><td><a href="#rhythm">6. Rhythm</a></td><td>One ops hour a week, real metrics</td><td>Ongoing</td></tr>
+</tbody></table></div>
+
+<h2 id="rings">How the team actually forms</h2>
+<ul>
+<li><b>Ring 1: you plus systems.</b> Tracking calls, drafting applications and outreach, keeping the tracker. I can carry this now, so your energy goes to making.</li>
+<li><b>Ring 2: paid specialists, per project.</b> Mix engineer, photographer or videographer, stylist, a publicist for one campaign. Clear scope, clear fee, clear end date.</li>
+<li><b>Ring 3: people with a stake.</b> Manager, studio manager, advisor, gallery, patron. Only people who already delivered in Ring 2, or who arrive with written terms.</li>
+<li><b>The rule that protects you:</b> you keep ownership of the paintings, the masters, the AR and the Opareon name. Collaborators earn credit, fees and agreed shares, not your IP.</li>
+</ul>
+
+<h2 id="kit">1. The kit: make yes easy</h2>
+<p>Backers move faster when they can see the whole thing in two minutes. Build one kit per lane; don't mix them.</p>
+<p class="group">Art kit</p>
+<ul>
+<li><b>9 strong images of work from the last 2 years.</b> That's exactly MOCA GA's application checklist, so build it once and reuse it everywhere.</li>
+<li><b>Artist statement and CV.</b> You have the statement; the CV lists your five-plus years of group shows and your publication.</li>
+<li><b>A 30 to 60 second AR demo video.</b> The hidden writing appearing is the moment people remember. Shoot it at Articulate ATL.</li>
+<li><b>Seen print offer sheet.</b> Edition, size, paper, price. Your plan of 30 at $350 is a projection until preorders say otherwise.</li>
+<li><b>Press folder.</b> Every clipping, interview and review. MOCA wants exactly three, so this folder is a scoreboard.</li>
+</ul>
+<p class="group">Music kit</p>
+<ul>
+<li><b>Starboy one-sheet.</b> Kobe and King in two lines: the soft, grounded voice and the assertive one, and why both stay.</li>
+<li><b>Private listening link and a split sheet.</b> Who wrote what, agreed in writing before release.</li>
+<li><b>Three press photos and a music bio.</b> Separate from your painter bio, so music people meet the musician.</li>
+</ul>
+<p class="group">Shared</p>
+<ul>
+<li><b>One Opareon paragraph.</b> For investors and partners who "see the ecosystem": what it connects, and what support would let it move.</li>
+</ul>
+<p class="group">Next four weeks</p>
+<ul class="check">
+<li><label><input type="checkbox"><span>Walkthrough today: photos, wall measurements, lighting notes</span></label></li>
+<li><label><input type="checkbox"><span>Southern Prize exhibition reception, Thu Nov 19, 6 to 9pm, Hambidge Hive</span></label></li>
+<li><label><input type="checkbox"><span>Articulate ATL, Sat Nov 21: AR demo video, install photos, email sign-ups</span></label></li>
+<li><label><input type="checkbox"><span>Ask for the recording of your noon interview</span></label></li>
+<li><label><input type="checkbox"><span>Pick your 9 images and write the Starboy one-sheet</span></label></li>
+<li><label><input type="checkbox"><span>Hambidge summer residency application opens Dec 1</span></label></li>
+</ul>
+
+<h2 id="art">2. Art lane: Blue Boy to a solo show</h2>
+<ul>
+<li><b>The target: MOCA GA's Working Artist Project.</b> $15,000, a solo show at MOCA GA, a catalogue and a studio apprentice. Douglas and Fulton counties both qualify. <a class="src" href="https://mocaga.org">mocaga.org</a></li>
+<li><b>Your two gaps.</b> At least one major solo show that wasn't part of a degree, and exactly three publications or reviews. You have one.</li>
+<li><b>Their timing.</b> The 2026 deadline was June 7. A similar June deadline in 2027 is likely, but not posted yet.</li>
+<li><b>Use Articulate ATL as raw material.</b> Install photos, the AR video, the interview, and a list of everyone who asked about price or wanted to stay in touch.</li>
+<li><b>Go to the Southern Prize reception Nov 19.</b> South Arts' state fellows are shown at Hambidge Hive, 575 Morosgo Dr NE. It's your field, two days before your show. <a class="src" href="https://www.hambidge.org">hambidge.org</a></li>
+<li><b>Press, publication two.</b> At ArtsATL, Senior Editor Danielle Charbonneau takes visual arts releases; there's also a self-serve calendar. Pitch the Blue Boy story, not just a date. <a class="src" href="https://www.artsatl.org">artsatl.org</a></li>
+<li><b>Prints: test before you order.</b> Open a Seen preorder or interest list first, and order the edition when the list supports it.</li>
+<li><b>The advisor seat.</b> JP is a fit for an unpaid advisor seat: a monthly call, honest feedback, introductions. No money and no stake asked either way.</li>
+</ul>
+
+<h2 id="music">3. Music lane: Starboy as the pilot release</h2>
+<ul>
+<li><b>Rights before release, in this order.</b> Distributor, then one PRO (ASCAP or BMI), then The MLC, then SoundExchange. Keep the splits identical everywhere. <a class="src" href="https://www.onestowatch.com">onestowatch.com</a></li>
+<li><b>The MLC: register as a self-administered songwriter.</b> It's free, takes no commission, and claims your US streaming mechanicals. <a class="src" href="https://www.themlc.com">themlc.com</a></li>
+<li><b>SoundExchange: register twice.</b> As featured performer and as owner of the recording. It's free and pays from Pandora and SiriusXM-type radio. Check your distributor's publishing add-on first, to avoid double claims.</li>
+<li><b>Mix pilot on SoundBetter.</b> Post a free brief, hear samples, check credits and reviews. Payment sits in escrow until you're satisfied. <a class="src" href="https://soundbetter.com">soundbetter.com</a></li>
+<li><b>The brief protects Kobe's softness.</b> Say plainly that the soft verse is meant to stay intimate and close, and the contrast with King is the point. Hire whoever gets that on the first pass.</li>
+<li><b>Find your music people.</b> AIMP's Atlanta chapter runs industry events; this year's summit had a panel called "When Do You Need a Manager?" <a class="src" href="https://aimp.org">aimp.org</a></li>
+<li><b>Grammy U, $50 a year.</b> For emerging music professionals 18 and up, no college needed, with Atlanta Chapter events. Voting membership needs 12 credits, so later. <a class="src" href="https://www.grammy.com">grammy.com</a></li>
+<li><b>Music press.</b> At ArtsATL, Executive Editor Shane Harrison takes music releases. Pitch the release separately from the paintings.</li>
+</ul>
+
+<h2 id="roles">4. First people: who, and how they earn a seat</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Role</th><th>Lane</th><th>First pilot</th><th>Earns a stake when</th></tr></thead>
+<tbody>
+<tr><td>Mix engineer</td><td>Music</td><td>One song, paid, escrow</td><td>Stays per project; re-hire on delivery</td></tr>
+<tr><td>Photo or video</td><td>Both</td><td>One documentation shoot</td><td>Repeat shoots become a retainer</td></tr>
+<tr><td>Stylist</td><td>Both</td><td>One shoot, flat fee or credit</td><td>Builds the look across shows and releases</td></tr>
+<tr><td>Publicist</td><td>Each lane</td><td>One campaign: solo show or single</td><td>Lands coverage you can count</td></tr>
+<tr><td>Advisor</td><td>Art</td><td>Monthly call, no money</td><td>Makes intros that turn into shows or buyers</td></tr>
+<tr><td>Manager</td><td>Music</td><td>Only after a release has traction</td><td>Real opportunities outgrow your ops hour</td></tr>
+<tr><td>Patron or investor</td><td>Opareon</td><td>Written terms only</td><td>Terms are reviewed by a lawyer</td></tr>
+</tbody></table></div>
+<p class="group">Green flags</p>
+<ul>
+<li><b>They ask about your vision before pitching theirs.</b> And they repeat it back accurately.</li>
+<li><b>They deliver something small on time.</b> Follow-through on a small job is the only proof that counts.</li>
+<li><b>They put scope in writing without being asked.</b> And they've done work close to yours.</li>
+</ul>
+<p class="group">Red flags</p>
+<ul>
+<li><b>Ownership for "exposure."</b> Anyone who wants your masters, paintings or AR in exchange for visibility.</li>
+<li><b>Upfront fees for placements or guaranteed press.</b> Vague dates, no references, pressure to sign fast.</li>
+<li><b>They want to fix the softness.</b> If they treat the Kobe voice as a flaw, they don't get the work.</li>
+</ul>
+
+<h2 id="terms">Fair terms for every pilot</h2>
+<ul>
+<li><b>Scope and date.</b> Exactly what's delivered, in what format, by when.</li>
+<li><b>Fee or trade, in writing.</b> Including how many revision rounds, and what extra rounds cost.</li>
+<li><b>Ownership and credit.</b> You own the work; they get credit and portfolio use. Music splits go on the split sheet.</li>
+<li><b>The exit.</b> Either side can end it with notice, and work done gets paid. No one is locked in.</li>
+<li><b>Get it checked for free.</b> Georgia Lawyers for the Arts runs monthly clinics with free 30-minute sessions for members on IP and simple contracts, plus pro bono referrals if your income qualifies. <a class="src" href="https://glarts.org">glarts.org</a></li>
+</ul>
+
+<h2 id="money">5. Money routes, timed to your breaks</h2>
+<p>Most 2026 cycles have closed. The next dates below follow each program's 2026 pattern, so check each site before you plan around one.</p>
+<ul>
+<li><b>Hambidge residency, opens Dec 1.</b> The summer session (June to August) takes applications Dec 1 to Jan 15. Visual art and music both qualify, and it fits your summer break. <a class="src" href="https://www.hambidge.org">hambidge.org</a></li>
+<li><b>Hambidge costs.</b> $300 a week and a $30 application fee. Distinguished Fellowships waive two weeks of fees and add a $700 stipend.</li>
+<li><b>South Arts State Fellowship, about February to March.</b> $5,000 for one Georgia artist; the Southern Prize is $25,000. Painting and an experimental category. The 2026 deadline was March 18. <a class="src" href="https://www.southarts.org">southarts.org</a></li>
+<li><b>Idea Capital, about September to November.</b> $1,000 or $2,500, plus a $5,000 award for experimental painting after five years in metro Atlanta. It funds new projects and artist fees, not tech development. <a class="src" href="https://www.ideacapitalatlanta.org/">ideacapitalatlanta.org</a></li>
+<li><b>Artadia Atlanta, about September.</b> Unrestricted money for visual artists in Douglas, Fulton and nearby counties. The 2026 deadline was Sept 18. <a class="src" href="https://artadia.org">artadia.org</a></li>
+<li><b>Check your grad program first.</b> South Arts excludes students in fine arts degrees, and Artadia excludes art-related degrees. An education degree may be fine, but confirm before you apply.</li>
+<li><b>Fractured Atlas, for the public AR show.</b> Fiscal sponsorship lets donors give tax-deductible gifts to a noncommercial project: 8% fee plus $10 a month membership. Not for prints. <a class="src" href="https://www.fracturedatlas.org">fracturedatlas.org</a></li>
+</ul>
+
+<h2 id="scripts">Outreach you can send</h2>
+<ul>
+<li><b>Mix engineer:</b> "I'm releasing Starboy, a two-voice record: one soft and grounded, one assertive. I want a paid one-song test. The soft verse has to stay intimate. Can you send two mixes closest to that?"</li>
+<li><b>Photographer:</b> "I'm showing Blue Boy paintings with hidden AR writing at Articulate ATL on Nov 21. I'm looking for one documentation shoot, paid or credited, with usage terms agreed first."</li>
+<li><b>Advisor (JP):</b> "I'm building Opareon, with painting, AR and music as separate lanes. I'd value a monthly 30-minute call: honest feedback and the occasional intro. Nothing financial attached."</li>
+<li><b>ArtsATL visual arts:</b> "Blue Boy is a series on the tenderness of Black men, with affirmations painted over and revealed through AR. Showing Nov 21 in Buckhead. Images and an AR demo are ready."</li>
+</ul>
+
+<h2 id="rhythm">6. Rhythm and what counts as progress</h2>
+<ul>
+<li><b>One ops hour a week.</b> Send one ask, improve one asset, log what came back. I can prep the hour so you just decide and send.</li>
+<li><b>Breaks are for production and applications.</b> Winter, spring and summer breaks hold the deadlines; weekdays protect your energy.</li>
+<li><b>Count follow-through, not followers.</b> Collaborators who delivered on time, and how many you'd hire again.</li>
+<li><b>Count the MOCA scoreboard.</b> Publications (now 1 of 3), solo show booked (0 of 1), applications sent and shortlists reached.</li>
+<li><b>Count real buyers.</b> Seen preorders against your 30, studio conversations, and people who came back after a show.</li>
+<li><b>Count your own time.</b> Hours of making protected each week. If the system eats them, the system changes.</li>
+</ul>
+
+<h2>Later: the full team</h2>
+<ul>
+<li><b>Manager, when the opportunities are real.</b> When admin from actual offers outruns your ops hour, and there's income to share.</li>
+<li><b>Gallery or studio manager, after the solo show.</b> Representation follows a body of work people have already seen.</li>
+<li><b>Investors in Opareon, on paper.</b> They back the ecosystem with written terms, never the IP itself.</li>
+</ul>
+<p>Trusting your own call and asking for real backing aren't opposites. This playbook is how you choose who gets to back you.</p>
+</main>
+<div class="sources"><b>Sources and where to verify</b><ul>
+<li><a href="https://mocaga.org">MOCA GA, Working Artist Project call 2026/2027</a></li>
+<li><a href="https://www.southarts.org">South Arts, Southern Prize and State Fellowships</a></li>
+<li><a href="https://www.hambidge.org">Hambidge Center, residency and Southern Prize reception</a></li>
+<li><a href="https://www.ideacapitalatlanta.org/">Idea Capital, 2026-27 grant cycle</a></li>
+<li><a href="https://artadia.org">Artadia, Atlanta award</a></li>
+<li><a href="https://glarts.org">Georgia Lawyers for the Arts</a></li>
+<li><a href="https://www.fracturedatlas.org">Fractured Atlas, fiscal sponsorship</a></li>
+<li><a href="https://www.onestowatch.com">Ones to Watch, royalty registration guide, Oct 2026</a></li>
+<li><a href="https://www.themlc.com">The MLC</a></li>
+<li><a href="https://soundbetter.com">SoundBetter</a></li>
+<li><a href="https://aimp.org">AIMP, Atlanta chapter</a></li>
+<li><a href="https://www.grammy.com">Recording Academy, membership and Grammy U</a></li>
+<li><a href="https://www.artsatl.org">ArtsATL, editors and calendar</a></li>
+</ul></div>
+</div>
+<script>document.querySelectorAll('.copy').forEach(b=>{b.hidden=false;b.onclick=()=>navigator.clipboard.writeText(document.querySelector('h1').innerText+'\nMade by Sesame\n\n'+document.querySelector('main').innerText).then(()=>{b.classList.add('done');setTimeout(()=>b.classList.remove('done'),1500)})})</script>
+<script>(()=>{const K='sesame-list:'+location.pathname+':'+document.title,L=[...document.querySelectorAll('ul.check')];if(!L.length)return;const row=(t,q,c)=>{const li=document.createElement('li');li.innerHTML='<label><input type="checkbox"><span></span><small></small></label><button class="x" aria-label="Remove">×</button>';li.querySelector('span').textContent=t;li.querySelector('small').textContent=q||'';li.querySelector('input').checked=!!c;return li};const read=u=>[...u.children].map(li=>[li.querySelector('span').textContent,(li.querySelector('small')||{}).textContent||'',li.querySelector('input').checked]);const save=()=>{try{localStorage.setItem(K,JSON.stringify(L.map(read)))}catch(e){}};let s=null;try{s=JSON.parse(localStorage.getItem(K))}catch(e){}L.forEach((u,i)=>{const it=s&&s[i]?s[i]:read(u);u.replaceChildren(...it.map(a=>row(...a)))});const last=L[L.length-1],f=document.createElement('form');f.className='add';f.innerHTML='<input placeholder="Add an item"><button class="send" aria-label="Add"></button>';last.after(f);const t=document.createElement('div');t.className='tools';t.innerHTML='<button type="button" class="tbtn">Reset</button>';f.after(t);document.addEventListener('change',e=>{if(e.target.closest('ul.check'))save()});document.addEventListener('click',e=>{const x=e.target.closest('ul.check .x');if(x){x.parentElement.remove();save()}});f.addEventListener('submit',e=>{e.preventDefault();const v=f.querySelector('input').value.trim();if(v){last.append(row(v,'',false));f.querySelector('input').value='';save()}});t.firstChild.addEventListener('click',()=>{L.forEach(u=>u.querySelectorAll('input').forEach(c=>c.checked=false));save()})})()</script>
+</body></html>
