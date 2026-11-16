@@ -169,7 +169,7 @@ body.off #offline{display:block}
 <div class="wrap">
 <p class="kicker">Omni, project tracker</p>
 <h1>Omni Project Progress Tracker</h1>
-<p class="updated">Tracker saved Nov 15, 2026, 7:02pm</p>
+<p class="updated">Tracker saved Nov 15, 2026, 7:46pm</p>
 <p id="offline">Offline: showing the last copy saved on this phone</p>
 <p class="lede">A running record of Kobe's local AI video-editing and approval-first posting pipeline, including decisions, development progress and unresolved questions.</p>
 <p class="notice"><b>Ticks save on this phone only.</b> A ticked To Do item moves to Completed, and Back to To Do there returns it. The times in Completed and anything you add there also save on this phone only. They don't change the tracker note or sync anywhere. When a step is really done, tell Sesame so it's logged in the tracker and shows up here after the next update.</p>
@@ -360,7 +360,7 @@ body.off #offline{display:block}
 <li><strong>Verified on your Mac (November 15):</strong> whispermlx is installed in its own environment and made per-word timings for IMG_2780 and for the SelfBelief recording.</li>
 <li><strong>Verified on your Mac (November 15):</strong> OpenFilm Studio opens from the Desktop icon. Studio's own Export button is not locked by the gate, so it stays unused.</li>
 <li><strong>Built, not yet rendered on your Mac:</strong> the audio-only motion add-on. It turns a voice recording into a vertical motion piece: a line that changes shape on key words, labels that type out on their word, a petal swarm that gathers into groups with rings, drifting petals, painting holds, a voice ring and geometry segments, ending on a Permission Slip card that loops back to the start. The same blocks can be added to parts of a video edit. A full demo rendered on Sesame's test machine and passed its checks. On your Mac its tools are set up and it drafted the SelfBelief storyboard with preview stills.</li>
-<li><strong>Waiting for you:</strong> the SelfBelief storyboard, seven draft parts to review and approve in Kintsugi before anything renders.</li>
+<li><strong>Waiting for you:</strong> the SelfBelief storyboard, five draft parts to review and approve in Kintsugi before anything renders.</li>
 <li><strong>Installed:</strong> the HyperFrames skills, vox-explainer, Herk Edit Kit and OpenMontage, as tools to draw on. OpenMontage is not yet connected to the approval gate.</li>
 <li><strong>Not built:</strong> reading meaning from the transcript, deciding cuts by meaning, matching images and paintings to what is said, and the first proof of concept.</li>
 <li><strong>Draft, not approved:</strong> the Blue Seam editing style. It is not in use and is not a settled requirement.</li>
@@ -395,7 +395,7 @@ body.off #offline{display:block}
 <li><strong>November 15, 2026:</strong> Installed OpenFilm Studio on your Mac; the Desktop Video Pipeline icon opens it.</li>
 <li><strong>November 15, 2026:</strong> Installed the HyperFrames skills, vox-explainer and Herk Edit Kit.</li>
 <li><strong>November 15, 2026:</strong> Finished the audio-only motion add-on and added it to the app, with an on and off switch. A full demo rendered on Sesame's test machine and passed its length, decode, loudness, label-timing and safe-area checks.</li>
-<li><strong>November 15, 2026:</strong> Set up the add-on on your Mac and drafted the SelfBelief recording into seven storyboard parts, waiting for your approval. Nothing was rendered.</li>
+<li><strong>November 15, 2026:</strong> Set up the add-on on your Mac and drafted the SelfBelief recording into five storyboard parts, waiting for your approval. Nothing was rendered.</li>
 <li><strong>November 15, 2026:</strong> Set up OpenMontage on your Mac in its own folder, with a quick test only. It has not run on footage.</li>
 </ul>
 <h4>How the estimate works</h4>
@@ -493,7 +493,7 @@ body.off #offline{display:block}
 <p><strong>Progress:</strong> Graphify is step 16, the last item on the Omni Editor to-do list, after the core editor steps, and it is unticked. It would map the omni-editor code so Pi can ask where things live and check what a change would affect; mapping notes, images and video would need an AI model, so that choice comes first. It was given a 1% weight taken from a milestone that has not started, so the estimate stays at 20%. The omni-editor repo was made private, and the Mac pulled the app with a read-only access key saved in its Keychain.</p>
 <h3>November 15, 2026: Audio only mode, the storyboard gate on the Mac, and a first audio draft</h3>
 <p>Kobe said yes to finishing the audio-only motion add-on and putting OpenMontage on the Mac, and asked for the Omni Editor project to be updated when the work finished.</p>
-<p><strong>Progress:</strong> Earlier today whispermlx was installed on the Mac and made per-word timings for IMG_2780; the HyperFrames storyboard test rendered on the Mac; the storyboard with its per-part approval gate worked in Kintsugi and OpenFilm on the Mac; OpenFilm Studio was installed and opens from the Desktop icon; and the HyperFrames skills, vox-explainer and Herk Edit Kit were installed. The audio-only motion add-on is finished and tested on Sesame's test machine, where a full demo rendered and passed its checks, and it is in the main app. On the Mac its packages and Manim are set up, and a voice recording (SelfBelief) was drafted into seven storyboard parts with preview stills, all waiting for approval. No motion video has rendered on the Mac yet. OpenMontage was set up on the Mac in its own folder. The Omni Editor estimate went from 20% to 51%.</p>
+<p><strong>Progress:</strong> Earlier today whispermlx was installed on the Mac and made per-word timings for IMG_2780; the HyperFrames storyboard test rendered on the Mac; the storyboard with its per-part approval gate worked in Kintsugi and OpenFilm on the Mac; OpenFilm Studio was installed and opens from the Desktop icon; and the HyperFrames skills, vox-explainer and Herk Edit Kit were installed. The audio-only motion add-on is finished and tested on Sesame's test machine, where a full demo rendered and passed its checks, and it is in the main app. On the Mac its packages and Manim are set up, and a voice recording (SelfBelief) was drafted into five storyboard parts with preview stills, all waiting for approval. No motion video has rendered on the Mac yet. OpenMontage was set up on the Mac in its own folder. The Omni Editor estimate went from 20% to 51%.</p>
 
 </section>
 <section id="project-direction">
@@ -787,6 +787,6 @@ const sync=()=>{let h='';try{h=decodeURIComponent(location.hash.slice(1))}catch(
 addEventListener('hashchange',sync);sync();
 })();
 </script>
-<script>window.OMNI_BUILD='23d581abec';(()=>{const V=window.OMNI_BUILD;let reg=null,busy=false;const check=async()=>{if(busy||!navigator.onLine)return;busy=true;try{if(reg&&reg.waiting)reg.waiting.postMessage('skipWaiting');const r=await fetch('version.json',{cache:'no-store'});if(!r.ok)return;const j=await r.json();if(j.version&&j.version!==V){const k='omni-reloaded-'+j.version;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,'1');await fetch(location.href.split('#')[0],{cache:'reload'}).then(x=>x.text()).catch(()=>{});location.reload();return}}catch(e){}finally{busy=false}};if('serviceWorker' in navigator){addEventListener('load',()=>{navigator.serviceWorker.register('sw.js',{updateViaCache:'none'}).then(r=>{reg=r;check()}).catch(()=>check())})}else{addEventListener('load',check)}document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')check()});addEventListener('pageshow',e=>{if(e.persisted)check()});addEventListener('online',check);})();</script>
+<script>window.OMNI_BUILD='71766b31ae';(()=>{const V=window.OMNI_BUILD;let reg=null,busy=false;const check=async()=>{if(busy||!navigator.onLine)return;busy=true;try{if(reg&&reg.waiting)reg.waiting.postMessage('skipWaiting');const r=await fetch('version.json',{cache:'no-store'});if(!r.ok)return;const j=await r.json();if(j.version&&j.version!==V){const k='omni-reloaded-'+j.version;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,'1');await fetch(location.href.split('#')[0],{cache:'reload'}).then(x=>x.text()).catch(()=>{});location.reload();return}}catch(e){}finally{busy=false}};if('serviceWorker' in navigator){addEventListener('load',()=>{navigator.serviceWorker.register('sw.js',{updateViaCache:'none'}).then(r=>{reg=r;check()}).catch(()=>check())})}else{addEventListener('load',check)}document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')check()});addEventListener('pageshow',e=>{if(e.persisted)check()});addEventListener('online',check);})();</script>
 </body>
 </html>
